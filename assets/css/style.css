@@ -1,0 +1,785 @@
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: url('/assets/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    position: relative; /* Needed for the overlay */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Adjust opacity as needed */
+    z-index: -1; /* Keeps it behind the content */
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Background Video */
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Festival Logo (Moved Further Down) */
+.hero-logo {
+    width: 18%;
+    max-width: 130px;
+    margin-top: 150px;
+    margin-bottom: 5px; /* Moved closer to title */
+    z-index: 2;
+}
+
+/* Festival Title Image (Centered) */
+.hero-title-image {
+    width: 45%;
+    max-width: 400px;
+    margin-top: -50px;
+    /* margin-bottom: 10px; Reduced gap */
+    z-index: 2;
+}
+
+/* Date Image (Moved Up Below Title) */
+.hero-date-image {
+    width: 35%;
+    max-width: 320px;
+    margin-top: -130px; /* Moved closer to title */
+    margin-bottom: 10px;
+    z-index: 2;
+}
+
+/* Stickers (Positioned Left & Right) */
+.stickers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Stickers on left and right */
+    position: absolute;
+    bottom: 5%;
+    padding: 0 10%;
+}
+
+.sticker {
+    width: 12%;
+    max-width: 100px;
+    z-index: 2;
+}
+
+/* Hero Text */
+.hero p {
+    font-size: 1.3vw;
+    font-weight: 600;
+    color: #fff;
+    z-index: 2;
+    margin-top: 5px;
+}
+
+.hero .small-text {
+    font-size: 1vw;
+    font-weight: 400;
+    color: #ddd;
+    font-style: italic;
+    margin-top: 3px;
+    z-index: 2;
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        padding: 0 10px;
+    }
+
+    .hero-logo {
+        width: 28%;
+        max-width: 110px;
+        margin-bottom: 15px; /* Adjusted */
+    }
+
+    .hero-title-image {
+        width: 65%;
+    }
+
+    .hero-date-image {
+        width: 55%;
+        margin-top: -3px; /* Adjusted */
+    }
+
+    .stickers {
+        padding: 0 5%;
+        bottom: 3%;
+    }
+
+    .sticker {
+        width: 18%;
+    }
+
+    .hero p {
+        font-size: 3vw;
+    }
+
+    .hero .small-text {
+        font-size: 2.5vw;
+    }
+}
+
+/* Festival Programmes Section */
+.festival-programmes {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+    color: black;
+}
+
+.festival-programmes h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+/* Programmes Grid */
+.programmes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.programme {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer;
+    color: black;
+}
+
+.programme:hover {
+    transform: translateY(-5px);
+    background: #ffcc00;
+    color: black;
+}
+
+.programme i {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.programme h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+/* Stickers */
+.sticker {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    z-index: 2;
+    bottom: -35%; /* Move stickers further down */
+}
+
+.sticker img {
+    width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+}
+
+/* Left Sticker */
+.sticker-left {
+    left: 5%;
+    width: 200px; /* Adjusted size */
+    bottom: -100%; /* Move it further down for large screens */
+}
+
+/* Right Sticker */
+.sticker-right {
+    right: 5%;
+    width: 450px; /* Adjusted size */
+    bottom: -60%; /* Move it further down */
+}
+
+/* Responsive Adjustments for Mobile Screens */
+@media (max-width: 600px) {
+    .sticker {
+        bottom: -10%; /* Adjust positioning for mobile */
+    }
+
+    .sticker-left {
+        width: 120px; /* Smaller size for mobile */
+        bottom: -25%;
+    }
+
+    .sticker-right {
+        width: 200px; /* Smaller size for mobile */
+        bottom: -25%;
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 8vw;
+    }
+    .hero p {
+        font-size: 4vw;
+    }
+    .hero .small-text {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 10vw;
+    }
+    .hero p {
+        font-size: 5vw;
+    }
+    .hero .small-text {
+        font-size: 4vw;
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto; /* Allow images to adjust their height automatically */
+    max-height: 250px; /* Optional: Set a max-height for better control */
+    object-fit: contain; /* Ensures the whole image is visible */
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-heading {
+    font-size: 32px;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsive Fix for Mobile Screens */
+@media (max-width: 600px) {
+    .gallery img {
+        max-height: 200px; /* Adjust height for smaller screens */
+    }
+}
+
+        .contact-section {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #040823;
+        }
+
+        .contact-section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--first);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 90%;
+            padding: 10px;
+            border: 2px solid var(--first);
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact-form button {
+            background: var(--second);
+            color: var(--first);
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            width: 90%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .contact-form button:hover {
+            background: #d1a347;
+        }
+
+        /* Responsive for Mobile */
+        @media (max-width: 768px) {
+            .contact-section {
+                width: 90%;
+            }
+        }
+/* General Styling for the Section */
+section {
+  /* background-color: teal; */
+  color: white;
+  /* font-family: 'Comic Neue', sans-serif; */
+  text-transform: uppercase;
+  overflow: hidden; /* Prevent scrolling bar */
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* General Styling for the Section */
+.news {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    background-color: teal;
+  }
+  
+  /* Scrolling Container */
+  .scroll-wrapper {
+    display: flex;
+    width: max-content; /* Prevent unnecessary stretching */
+    animation: slide-left 80s linear infinite; /* Adjust speed as needed */
+  }
+  
+  /* Duplicating Content for Seamless Loop */
+  .scroll-section {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between news items */
+    min-width: 100%; /* Ensure content spans full width */
+  }
+  
+  /* Styling for Each News Item */
+  .scroll-section p {
+    font-size: 32px;
+    font-weight: 400;
+    padding-left: 1em;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  
+  /* Keyframes for Infinite Scrolling */
+  @keyframes slide-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .news {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: teal;
+    color: white;
+    font-family: 'Comic Neue', sans-serif;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.news-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Styling for each scrolling message */
+.news-message {
+  display: flex;
+  flex-shrink: 0; /* Prevent shrinking */
+  height: 40px;
+  align-items: center;
+  animation: slide-left 55s linear infinite; /* Adjusted speed for smooth effect */
+}
+
+/* Styling for the paragraph text */
+.news-message p {
+  font-size:32px;
+  font-weight: 400;
+  padding-left: 1em;
+  letter-spacing: 1px;
+  white-space: nowrap; /* Ensures text stays in a single line */
+}
+
+/* Animation for the scrolling effect */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0%); /* Start from right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move fully to left */
+  }
+}
+
+/* Mobile-specific Styles */
+@media only screen and (max-width: 768px) {
+  .news-message p {
+    font-size: 1.8em; /* Slightly reduced font size */
+  }
+
+  .news {
+    gap: 20px; /* Adjusted spacing */
+  }
+
+  .news-message {
+    animation: slide-left 12s linear infinite; /* Slightly faster for mobile */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .news-message p {
+    font-size: 1.4em; /* Smaller font for compact screens */
+  }
+
+  .news {
+    gap: 15px; /* Reduce gap further */
+  }
+
+  .news-message {
+    animation: slide-left 60s linear infinite; /* Faster scroll for smaller screens */
+  }
+}
+.festival-description {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.1); /* Light overlay effect */
+    color: white;
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+}
+
+.festival-description h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffd700; /* Gold color for a premium look */
+}
+
+.festival-description p {
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+.sponsor-cta {
+    text-align: center;
+    /* background-color: #3a0404; */
+    background-color: #043334;
+
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sponsor-cta h2 {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sponsor-cta p {
+    font-size: 18px;
+    color: #f9f9f9;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.sponsor-btn {
+    display: inline-block;
+    background-color:#3a0404;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+}
+
+.sponsor-btn:hover {
+    background-color: #b71c1c;
+}
+
+/* Hidden Form */
+.sponsor-form {
+    display: none;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.sponsor-form h3 {
+    margin-bottom: 10px;
+}
+
+.sponsor-form input,
+.sponsor-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sponsor-form button {
+    width: 100%;
+    background: #25D366;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sponsor-form button:hover {
+    background: #1EBE5D;
+}
+
+.close-btn {
+    background: #d32f2f !important;
+}
+
+.close-btn:hover {
+    background: #b71c1c !important;
+}
+
+/* Heading Style */
+.guests-heading {
+    /* background-color: #f9f9f9; */
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+
+    text-align: center;
+    top: 10px;
+  }
+  
+  /* Guests Section */
+  .guests-section {
+    padding: 20px;
+    /* background-color: #f9f9f9; */
+  }
+  
+  /* Guests Grid */
+  .guests-container {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    
+    
+    /* Default: 1 column (mobile view) */
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  /* Small screens (≥576px) - 2 guests per row */
+  @media (min-width: 576px) {
+    .guests-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Medium screens (≥768px) - 3 guests per row */
+  @media (min-width: 768px) {
+    .guests-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Large screens (≥1024px) - 4 guests per row */
+  @media (min-width: 1024px) {
+    .guests-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Guest Card */
+  .guest-card {
+    /* background-color: #fff; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    border: 3px solid teal;
+
+  }
+  
+  .guest-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Guest Image */
+  .guest-image {
+    width:150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* background-color: teal; */
+    
+  }
+  
+  /* Guest Name */
+  .guest-name {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 15px 0 5px;
+    /* color: #3a0404; */
+    color: white;
+    display: block;
+  }
+  
+  /* Guest Role */
+  .guest-role {
+    font-size: 14px;
+    color: white;
+
+    text-transform: none;
+  }
+  
+  /* Fixing hidden text issues */
+  .guest-name, .guest-role {
+    display: block !important;
+    visibility: visible;
+    white-space: normal;
+  }
+  
+
+  
+/* Founder Section */
+.founder-section {
+    text-align: center;
+    padding: 40px 20px;
+    /* background-color: #f9f9f9; */
+}
+
+.founder-heading {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+.founder-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.founder-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid teal;
+}
+
+.founder-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+
+}
+
+.founder-role {
+    font-size: 1em;
+    color: white;
+
+}
