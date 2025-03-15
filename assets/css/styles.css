@@ -316,7 +316,7 @@ to {
 .founders {
     text-align: center;
     padding: 40px 20px;
-    background-color: #f8f8f8;
+    background-color:white;
 }
 
 .founders-title {
@@ -344,7 +344,7 @@ to {
     max-width: 200px;
     height: auto;
     border-radius: 10px;
-    mix-blend-mode: multiply;
+    mix-blend-mode: lighten;
 }
 
 .founder h3 {

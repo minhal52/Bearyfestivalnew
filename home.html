@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
 <style>
 
@@ -122,7 +124,7 @@
 </style>
 <body>
     
-        <!-- 🏝️ NAVBAR SECTION -->
+        <!--  NAVBAR SECTION -->
         <nav class="navbar">
              <div class="logo">
                  <img src="assets/img/kbffinallogo.png" alt="BearyMela Logo">
@@ -133,7 +135,7 @@
                  <li><a href="#gallery">Gallery</a></li>
                  <li><a href="#contact">Contact</a></li>
              </ul>
-             <!-- 🍔 Hamburger Menu -->
+             <!--  Hamburger Menu -->
              <div class="hamburger" onclick="toggleMenu()">
                  <span></span>
                  <span></span>
@@ -141,30 +143,30 @@
              </div>
          </nav>
      
-   <!-- 🌊 HERO SECTION -->
+   <!--  HERO SECTION -->
    <section class="hero">
        <video autoplay muted loop playsinline class="hero-video">
            <source src="assets/img/oceanvdeo.mp4" type="video/mp4">
            Your browser does not support the video tag.
        </video>
 
-       <!-- 🏝️ Logo -->
+       <!--  Logo -->
        <div class="hero-logo">
         <img src="assets/img/kbffinallogo.png" alt="BearyMela Logo">
 
        </div>
 
-       <!-- 📌 Title Image -->
+       <!-- Title Image -->
        <div class="hero-title">
            <img src="assets/img/bearyfestivalpng-removebg-preview.png" alt="BearyMela Title">
        </div>
 
-       <!-- ✨ Subtitle Below Title -->
+       <!--  Subtitle Below Title -->
        <div class="hero-subtitle">
            By Mangalore Story
        </div>
 
-       <!-- 📅 Date Image Below Subtitle -->
+       <!--  Date Image Below Subtitle -->
        <div class="hero-date">
            <img src="assets/img/datepng-removebg-preview.png" alt="Event Date">
        </div>
@@ -180,7 +182,7 @@
         </div>
     </div>
 </div>
-<!-- 👤 GUESTS SECTION -->
+<!--  GUESTS SECTION -->
 <section class="guests">
     <h2 class="guests-title">Chief Guests</h2>
     <div class="guests-container">
@@ -201,6 +203,8 @@
         </div>
     </div>
 </section>
+
+<!-- about us -->
 <section class="about-us">
     <div class="about-container">
         <!-- Image Left, Content Right -->
@@ -219,7 +223,7 @@
     </div>
 </section>
 
-<!-- 👑 FOUNDERS SECTION -->
+<!--  FOUNDERS SECTION -->
 <section class="founders" id="about">
     <h2 class="founders-title">Founders</h2>
     <div class="founders-container">
@@ -242,7 +246,7 @@
         </div>
     </div>
 </section>
-<!-- 📢 Mangalore Story Section -->
+<!--  Mangalore Story Section -->
 <section class="mangalore-story">
     <h2 class="team-title">Marketing Team</h2>
     <div class="team-card">
@@ -252,7 +256,7 @@
     </div>
 </section>
 
-<!-- 📌 KBF LAYOUT PLAN SECTION -->
+<!--  KBF LAYOUT PLAN SECTION -->
 <section class="kbf-layout">
     <h2>Karnataka Beary Festival Layout Plan</h2>
     <p>Explore the Karnataka Beary Festival 2025 layout and discover the key areas, stages, and booths.</p>
@@ -318,132 +322,8 @@
 </div>
 
 <script>
-function toggleMenu() {
-    let navLinks = document.querySelector(".nav-links");
-    let hamburger = document.querySelector(".hamburger");
-
-    navLinks.classList.toggle("active");
-    hamburger.classList.toggle("active");
-}
-// scroll navbar
-    window.addEventListener("scroll", function () {
-    let navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled"); // Add background on scroll
-    } else {
-        navbar.classList.remove("scrolled"); // Remove background when at the top
-    }
-});
-
-  // HERO SECTION LOAD
-  workObserver.observe(workSection);
-    document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(() => {
-            document.querySelector(".hero").classList.add("show");
-        }, 500);
-    });
-
-
-    document.addEventListener("wheel", function(event) {
-        event.preventDefault();
-        window.scrollBy({
-            top: event.deltaY * 1, 
-            behavior: "smooth"
-        });
-    }, { passive: false });
-    
-    // WHATSAPP MESSAGE
-    function sendWhatsAppMessage(event) {
-        event.preventDefault(); // Prevent form submission
-        
-        // Get input values
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let phone = document.getElementById("phone").value;
-        let category = document.getElementById("category").value;
-        let message = document.getElementById("message").value;
-
-        // WhatsApp number (without + sign)
-        let whatsappNumber = "9632781673";
-
-
-        // Properly formatted prefilled WhatsApp message
-        let whatsappMessage = `Hello, I am ${name}. \nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\n\nMessage:\n${message}`;
-
-        // Encode the message for URL
-        let encodedMessage = encodeURIComponent(whatsappMessage);
-
-        // Open WhatsApp link
-        let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-        window.open(whatsappURL, "_blank");
-    }
-
-     document.addEventListener("DOMContentLoaded", function () {
-    const scrollWrapper = document.querySelector(".scroll-wrapper");
-    const scrollSection = document.querySelector(".scroll-section");
-
-    // Duplicate the content to create an infinite loop
-    const duplicateSection = scrollSection.cloneNode(true);
-    scrollWrapper.appendChild(duplicateSection);
-});
-function openSponsorForm() {
-    document.getElementById("sponsor-form").style.display = "block";
-}
-
-function closeSponsorForm() {
-    document.getElementById("sponsor-form").style.display = "none";
-}
-
-function sendWhatsApp() {
-    let name = document.getElementById("sponsor-name").value;
-    let phone = document.getElementById("sponsor-phone").value;
-    let email = document.getElementById("sponsor-email").value;
-    let message = document.getElementById("sponsor-message").value;
-
-    let whatsappMessage = `Hello, I am interested in sponsoring Karnataka Beary Festival 2025.%0A
-Name: ${name}%0A
-Phone: ${phone}%0A
-Email: ${email}%0A
-Message: ${message}`;
-
-    let whatsappURL = `https://wa.me/9632781673?text=${whatsappMessage}`;
-    window.open(whatsappURL, "_blank");
-}
-
-// whatsap link
-document.addEventListener("DOMContentLoaded", function () {
-    const scrollWrapper = document.querySelector(".scroll-wrapper");
-    const scrollSection = document.querySelector(".scroll-section");
-
-    // Duplicate the content to create an infinite loop
-    const duplicateSection = scrollSection.cloneNode(true);
-    scrollWrapper.appendChild(duplicateSection);
-});
-function openSponsorForm() {
-    document.getElementById("sponsor-form").style.display = "block";
-}
-
-function closeSponsorForm() {
-    document.getElementById("sponsor-form").style.display = "none";
-}
-
-function sendWhatsApp() {
-    let name = document.getElementById("sponsor-name").value;
-    let phone = document.getElementById("sponsor-phone").value;
-    let email = document.getElementById("sponsor-email").value;
-    let message = document.getElementById("sponsor-message").value;
-
-    let whatsappMessage = `Hello, I am interested in sponsoring Karnataka Beary Festival 2025.%0A
-Name: ${name}%0A
-Phone: ${phone}%0A
-Email: ${email}%0A
-Message: ${message}`;
-
-    let whatsappURL = `https://wa.me/9632781673?text=${whatsappMessage}`;
-    window.open(whatsappURL, "_blank");
-}
-
 
 </script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
