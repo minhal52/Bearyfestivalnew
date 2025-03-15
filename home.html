@@ -10,10 +10,119 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <style>
+/* 🌟 NAVBAR STYLES */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: transparent; /* No background by default */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Navbar background after scrolling (for large screens) */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.7);
+    height: 25px;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin-right: 60px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f4d03f;
+}
+
+/* 🍔 Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-right: 45px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: white;
+}
+
+/* 📱 Mobile Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        background: rgba(0, 0, 0, 0.7); /* Always visible on mobile */
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
 
 </style>
 <body>
-
+   <!-- 🏝️ NAVBAR SECTION -->
+   <nav class="navbar">
+    <div class="logo">
+        <img src="assets/img/kbflogo-removebg-preview.png" alt="BearyMela Logo">
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <!-- <li><a href="#">Events</a></li> -->
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
    <!-- 🌊 HERO SECTION -->
    <section class="hero">
        <video autoplay muted loop playsinline class="hero-video">
@@ -75,7 +184,7 @@
 </section>
 
 <!-- 👑 FOUNDERS SECTION -->
-<section class="founders">
+<section class="founders" id="about">
     <h2 class="founders-title">Founders</h2>
     <div class="founders-container">
         <!-- Founder 1 -->
@@ -128,7 +237,7 @@
     </div>
 </section>
 
-<section class="program-gallery">
+<section class="program-gallery" id="gallery">
     <h2 class="gallery-title">Program Gallery</h2>
     <div class="gallery-container">
         <div class="gallery-item"><img src="assets/img/g4.jpg" alt="Gallery Image 1"></div>
@@ -148,7 +257,7 @@
         Join us for the <strong>Karnataka Beary Festival 2025</strong>, a vibrant three-day celebration of culture, talent, and community, held at <strong>Karavali Utsava Maidana Ballalbagh, Mangalore</strong> from <strong>April 18-20, 2025</strong>. This extravaganza promises an unforgettable experience, showcasing the best of Karnataka's Beary culture through cultural activities, achievers' recognition, food festival, talent show, job mela, kids' fun games, startup platform, cricket match, and family gathering. The festival will also feature competitions, including food and mehandi, and awards for outstanding contributions in various fields. Mark your calendars and get ready to experience the vibrant spirit of Karnataka's Beary community!
     </p>
 </div>
-<div class="contact-section">
+<div class="contact-section" id="contact">
     <h2 style="text-align: center;">Connect Us</h2>
     <form class="contact-form" onsubmit="sendWhatsAppMessage(event)">
         <input type="text" id="name" placeholder="Your Name" required>
@@ -165,6 +274,23 @@
 </div>
 
 <script>
+
+      // Toggle Mobile Menu
+      const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+    window.addEventListener("scroll", function () {
+    let navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled"); // Add background on scroll
+    } else {
+        navbar.classList.remove("scrolled"); // Remove background when at the top
+    }
+});
+
   // HERO SECTION LOAD
   workObserver.observe(workSection);
     document.addEventListener("DOMContentLoaded", function () {
