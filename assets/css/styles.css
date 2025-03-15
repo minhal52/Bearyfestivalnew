@@ -246,7 +246,6 @@ to {
     color: #040823;
     margin-top: -15px;
 }
-
 /* About Us Section */
 .about-container {
     display: flex;
@@ -262,13 +261,14 @@ to {
     gap: 30px;
 }
 
+/* 📷 Image Styling */
 .about-img {
     width: 350px;
-    /* max-width: 400px; */
     height: 250px;
     border-radius: 10px;
 }
 
+/* 📄 Content Styling */
 .about-content {
     width: 50%;
 }
@@ -285,22 +285,32 @@ to {
     line-height: 1.6;
 }
 
-/* Responsive Design */
+/* 🌍 Responsive Design */
 @media (max-width: 768px) {
     .about-section {
         flex-direction: column;
         text-align: center;
+        gap: 20px;
     }
 
     .about-img {
-        width: 100px;
-        max-width: 300px;
+        width: 200px; /* Smaller image */
+        height: 150px;
     }
 
     .about-content {
-        width: 100%;
+        width: 90%;
+    }
+
+    .about-content h2 {
+        font-size: 22px;
+    }
+
+    .about-content p {
+        font-size: 14px;
     }
 }
+
 
 /* 👑 Founders Section */
 .founders {
