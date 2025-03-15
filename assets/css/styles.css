@@ -5,6 +5,32 @@
     padding: 0;
     overflow-x: hidden;
 }
+/* Target only the vertical scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Adjust thickness for Y scrollbar */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Light background */
+    border-radius: 10px;
+}
+
+/* Scrollbar Thumb (Draggable Part) */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #00796b, #26a69a); /* Stylish gradient */
+    border-radius: 10px;
+}
+
+/* Scrollbar Thumb Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #004d40, #00897b); /* Darker shade on hover */
+}
+
+/* Hide horizontal scrollbar */
+::-webkit-scrollbar:horizontal {
+    display: none;
+}
 
 
 /* 🌊 HERO SECTION */
