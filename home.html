@@ -11,113 +11,6 @@
 </head>
 <style>
 
-/* 🌟 NAVBAR STYLES */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: transparent;
-    transition: background 0.3s ease-in-out;
-}
-
-/* Navbar background after scrolling (for large screens) */
-.navbar.scrolled {
-    background: rgba(0, 0, 0, 0.7);
-    height: 25px;
-}
-
-/* Logo */
-.logo img {
-    height: 50px;
-}
-
-/* Nav Links */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    padding: 0;
-    margin-right: 60px;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #f4d03f;
-}
-
-/* 🍔 Hamburger Menu */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    margin-right: 45px;
-}
-
-.hamburger span {
-    width: 30px;
-    height: 3px;
-    background: white;
-    transition: 0.3s;
-}
-
-/* 📱 Mobile Responsive Navbar */
-@media (max-width: 768px) {
-    .navbar {
-        background: rgba(0, 0, 0, 0.7);
-        height: 28px;
-    }
-    .logo img {
-    height: 50px;
-}
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.7);
-        width: 100%;
-        position: absolute;
-        top: 38px;
-        left: 0;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    /* Hamburger Animation */
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-}
 </style>
 <body>
     <body>
@@ -200,6 +93,23 @@
         </div>
     </div>
 </section>
+<section class="about-us">
+    <div class="about-container">
+        <!-- Image Left, Content Right -->
+        <div class="about-section">
+            <img src="assets/img/g4.jpg" alt="Karnataka Beary Festival" class="about-img">
+            <div class="about-content">
+                <h2>About Karnataka Beary Festival 2025</h2>
+                <p>
+                    Karnataka Beary Festival 2025 is a vibrant three-day celebration of culture, talent, and community, 
+                    taking place at Karavali Utsava Maidana, Mangalore from April 18-20, 2025. 
+                    This festival showcases the richness of Karnataka’s Beary heritage through cultural activities, 
+                    achievers' recognition, a food festival, talent shows, and more.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- 👑 FOUNDERS SECTION -->
 <section class="founders" id="about">
@@ -224,7 +134,15 @@
         </div>
     </div>
 </section>
-
+<!-- 📢 Mangalore Story Section -->
+<section class="mangalore-story">
+    <h2 class="team-title">Marketing Team</h2>
+    <div class="team-card">
+        <img src="assets/img/manglorestoryprofile.jpeg" alt="Marketing Team">
+        <h3>Mangalore Story</h3>
+        <!-- <p>Marketing Head</p> -->
+    </div>
+</section>
 
 <!-- 📌 KBF LAYOUT PLAN SECTION -->
 <section class="kbf-layout">
@@ -263,7 +181,7 @@
         <div class="gallery-item"><img src="assets/img/g2.jpg" alt="Gallery Image 3"></div>
         <div class="gallery-item"><img src="assets/img/g3.jpg" alt="Gallery Image 4"></div>
         <div class="gallery-item"><img src="assets/img/g5.jpg" alt="Gallery Image 5"></div>
-        <div class="gallery-item"><img src="assets/img/g7.jpg" alt="Gallery Image 6"></div>
+        <!-- <div class="gallery-item"><img src="assets/img/g7.jpg" alt="Gallery Image 6"></div> -->
         <div class="gallery-item"><img src="assets/img/g8.jpg" alt="Gallery Image 6"></div>
         <div class="gallery-item"><img src="assets/img/g6.jpg" alt="Gallery Image 6"></div>
         
