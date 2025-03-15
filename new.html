@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karnataka Beary Festival 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+    <title>Document</title>
     <style>
-        /* Reset & Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        :root {
+        /* @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"); */
+
+:root {
   --color-dark: #0f172a;
   --color-light: #f8fafc;
   --color-accent-1: #38bdf8;
@@ -24,96 +19,20 @@
   --font-primary: "Space Grotesk", sans-serif;
 }
 
-        /* Scene */
-        #scene {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Starter Text */
-        #starter {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
-            font-weight: bold;
-            text-align: center;
-            color: white;
-            cursor: pointer;
-            z-index: 3; /* Ensure it's above the curtain */
-            transition: opacity 1s ease-in-out;
-        }
-
-        @media (max-width: 768px) {
-    #starter {
-        font-size: 1rem; /* Reduce font size for smaller screens */
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%; /* Ensure proper spacing */
-        white-space: normal; /* Allow text wrapping if needed */
-        padding: 10px; /* Add padding for better touch accessibility */
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  overflow: hidden;
+  height: 100vh;
+}
 
-        /* Curtain */
-        #curtain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            z-index: 2;
-        }
-
-        .left, .right {
-            width: 50%;
-            height: 100%;
-            background-image: url("assets/img/curtain.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            transition: transform 2s ease-in-out;
-        }
-
-        .left {
-            transform-origin: center right;
-        }
-
-        .right {
-            transform-origin: center left;
-        }
-
-        /* Curtain Open Animation */
-        #curtain.open .left {
-            transform: translateX(-100%) scale(0, 2);
-        }
-
-        #curtain.open .right {
-            transform: translateX(100%) scale(0, 2);
-        }
-
-        /* Scene Expansion */
-        #scene.expand {
-            background-color: rgb(32, 32, 32);
-            transition: background-color 2s ease-in-out;
-        }
-
-        /* Fade Out Effect for Starter Text */
-        #starter.fade-out {
-            opacity: 0;
-        }
-
-        
 .preloader {
   position: fixed;
   top: 0;
@@ -161,7 +80,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 
 .loading-stage {
@@ -251,6 +169,38 @@
   transform: translate(50%, 50%) scale(0);
 }
 
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+  padding: 2rem;
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.content p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
     </style>
 </head>
 <body>
@@ -275,77 +225,13 @@
         </div>
       </div>
       
-    <div id="scene">
-        <div id="starter">Press Enter or Tap</div> <!-- Centered starter text inside scene -->
-        <div id="curtain">
-            <div class="left"></div>
-            <div class="right"></div>
-        </div>
-    </div>
- <!--  HERO SECTION -->
- <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="assets/img/oceanvdeo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+      <main class="content">
+        <h1>Welcome to the Experience</h1>
+        <p>The future is already here, it's just not evenly distributed.</p>
+      </main>
 
-    <!--  Logo -->
-    <div class="hero-logo">
-     <img src="assets/img/kbffinallogo.png" alt="BearyMela Logo">
-
-    </div>
-
-    <!-- Title Image -->
-    <div class="hero-title">
-        <img src="assets/img/bearyfestivalpng-removebg-preview.png" alt="BearyMela Title">
-    </div>
-
-    <!--  Subtitle Below Title -->
-    <div class="hero-subtitle">
-        By Mangalore Story
-    </div>
-
-    <!--  Date Image Below Subtitle -->
-    <div class="hero-date">
-        <img src="assets/img/datepng-removebg-preview.png" alt="Event Date">
-    </div>
-</section>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-    let hasOpened = false;
-
-    function showTime() {
-        if (hasOpened) return;
-        hasOpened = true;
-
-        document.getElementById("curtain").classList.add("open");
-        document.getElementById("scene").classList.add("expand");
-        document.getElementById("starter").classList.add("fade-out");
-
-        setTimeout(function() {
-            document.getElementById("starter").style.display = 'none';
-        }, 1000);
-
-        // Replace the current page instantly
-        setTimeout(function() {
-            window.location.replace("home.html"); // Avoids back button issues
-        }, 1500);
-    }
-
-    // Trigger animation and transition
-    document.addEventListener('keydown', function(event) {
-        if (event.key === "Enter") {
-            showTime();
-        }
-    });
-
-    document.addEventListener('touchstart', function() {
-        showTime();
-    }, { once: true });
-
-});
-
-                // Wait for DOM to be fully loaded
+      <script>
+        // Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   // Elements
   const progressCircle = document.querySelector(".progress-ring-circle");
@@ -508,7 +394,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-    </script>
-
+      </script>
 </body>
 </html>

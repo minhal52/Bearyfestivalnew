@@ -13,11 +13,10 @@
 </head>
 <style>
 
-
 /* 🌟 NAVBAR STYLES */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centering nav links */
     align-items: center;
     padding: 15px 20px;
     position: fixed;
@@ -25,19 +24,20 @@
     top: 0;
     left: 0;
     z-index: 1000;
-    background: transparent;
-    transition: background 0.3s ease-in-out;
+    background: transparent; /* Always transparent */
 }
 
-/* Navbar background after scrolling (for large screens) */
+/* Add a slight opacity when scrolling */
 .navbar.scrolled {
-    background: rgba(0, 0, 0, 0.7);
-    height: 25px;
+    background: rgba(0, 0, 0, 0.3); /* 30% opacity black */
 }
+
 
 /* Logo */
 .logo img {
     height: 50px;
+    position: absolute;
+    left: 20px; /* Keeps logo aligned on the left */
 }
 
 /* Nav Links */
@@ -46,7 +46,6 @@
     display: flex;
     gap: 30px;
     padding: 0;
-    margin-right: 60px;
 }
 
 .nav-links li {
@@ -65,70 +64,35 @@
     color: #f4d03f;
 }
 
-/* 🍔 Hamburger Menu */
+/* Remove hamburger menu */
 .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    margin-right: 45px;
-}
-
-.hamburger span {
-    width: 30px;
-    height: 3px;
-    background: white;
-    transition: 0.3s;
+    display: none !important;
 }
 
 /* 📱 Mobile Responsive Navbar */
 @media (max-width: 768px) {
     .navbar {
-        background: rgba(0, 0, 0, 0.7);
-        height: 28px;
+        justify-content: center; /* Center the nav links */
+        padding: 10px;
     }
+
     .logo img {
-    height: 50px;
-}
+        height: 45px;
+        left: 10px; /* Adjusted for smaller screens */
+    }
+
     .nav-links {
-        display: none;
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.7);
-        width: 100%;
-        position: absolute;
-        top: 38px;
-        left: 0;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    /* Hamburger Animation */
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+        flex-direction: row; /* Keep nav links in a row */
+        gap: 20px; /* Adjust spacing */
     }
 }
+
 </style>
 <body>
     
         <!--  NAVBAR SECTION -->
         <nav class="navbar">
-             <div class="logo">
-                 <img src="assets/img/kbffinallogo.png" alt="BearyMela Logo">
-             </div>
+        
              <ul class="nav-links">
                  <li><a href="#">Home</a></li>
                  <li><a href="#about">About</a></li>
@@ -178,13 +142,14 @@
             <p>
                 Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award | Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award
             </p>
+           
             
         </div>
     </div>
 </div>
 <!--  GUESTS SECTION -->
 <section class="guests">
-    <h2 class="guests-title">Chief Guests</h2>
+    <h2 class="guests-title">Event Patrons</h2>
     <div class="guests-container">
         <!-- Guest 1 -->
         <div class="guest">
@@ -322,6 +287,18 @@
 </div>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const scrollSection = document.querySelector(".scroll-section");
+    const duplicateContent = scrollSection.innerHTML; // Clone the content
+
+    // Duplicate the text to prevent empty space
+    scrollSection.innerHTML += duplicateContent;
+
+    // Apply animation dynamically
+    scrollSection.style.display = "flex";
+    scrollSection.style.animation = "scrollText 250s linear infinite";
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     ScrollReveal().reveal(".hero-logo img", {
         origin: "top",

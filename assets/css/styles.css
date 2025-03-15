@@ -73,7 +73,7 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
 .hero-logo {
     position: relative;
     z-index: 3;
-    margin-top: 150px; /* Moved the logo slightly down */
+    margin-top: 180px; /* Moved the logo slightly down */
 }
 
 .hero-logo img {
@@ -97,9 +97,9 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
 /* ✨ Subtitle */
 .hero-subtitle {
     font-size: 1rem;
-    /* font-weight: 900; */
+    font-weight: 800;
     font-family: 'Montserrat', sans-serif;
-    color:#3a0404;
+    color:white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     z-index: 3;
     margin-top: -50px; /* Adjust spacing */
@@ -172,7 +172,7 @@ padding: 5px 0; /* Reduced padding */
 display: flex;
 align-items: center;
 width: max-content;
-animation: scrollText 50s linear infinite; /* Adjusted speed for smooth effect */
+/* animation: scrollText 50s linear infinite; Adjusted speed for smooth effect */
 }
 
 /* Styling for Each Scrolling Message */
@@ -200,9 +200,17 @@ to {
 .scroll-section p {
     font-size: 20px;
 }
+@keyframes scrollText {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
 
 .scroll-wrapper {
-    animation: scrollText 30s linear infinite;
+    animation: scrollText 500s linear infinite;
 }
 
 .news {
@@ -216,7 +224,7 @@ to {
 }
 
 .scroll-wrapper {
-    animation: scrollText 25s linear infinite;
+    animation: scrollText 350s linear infinite;
 }
 
 .news {
