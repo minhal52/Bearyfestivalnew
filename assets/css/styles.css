@@ -280,6 +280,7 @@ to {
     max-width: 200px;
     height: auto;
     border-radius: 10px;
+    mix-blend-mode: multiply;
 }
 
 .founder h3 {
