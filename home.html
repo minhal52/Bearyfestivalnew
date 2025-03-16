@@ -187,30 +187,46 @@
         </div>
     </div>
 </section>
-
 <!--  FOUNDERS SECTION -->
 <section class="founders" id="about">
     <h2 class="founders-title">Founders</h2>
     <div class="founders-container">
-        <!-- Founder 1 -->
-        <div class="founder">
-            <img src="assets/img/founder-removebg-preview.png" alt="Founder 1">
-            <h3>Iqbal Parliya</h3>
+        <!-- First Founder (placed above) -->
+        <div class="founder founder-top">
+            <div class="founder-card">
+                <img src="assets/img/founder1.jpg" alt="Founder 1">
+                <h3>Iqbal Parliya</h3>
+            </div>
         </div>
 
-         <!-- Founder 2 -->
-        <div class="founder">
-            <img src="assets/img/founder2.jpg" alt="Founder 2">
-            <h3>Mansooru Ahmed</h3>
-        </div>
+        <div class="founders-bottom">
+            <!-- Founder 2 -->
+            <div class="founder">
+                <div class="founder-card">
+                    <img src="assets/img/founder2.jpg" alt="Founder 2">
+                    <h3>Mansooru Ahmed</h3>
+                </div>
+            </div>
 
-        <!-- Founder 3 -->
-        <div class="founder">
-            <img src="assets/img/founder3.jpg" alt="Founder 3">
-            <h3>Mansooru kundapura</h3>
+            <!-- Founder 3 -->
+            <div class="founder">
+                <div class="founder-card">
+                    <img src="assets/img/founder3.jpg" alt="Founder 3">
+                    <h3>Mansooru Kundapura</h3>
+                </div>
+            </div>
+
+            <!-- Founder 4 -->
+            <div class="founder">
+                <div class="founder-card">
+                    <img src="assets/img/founder4.jpg" alt="Founder 4">
+                    <h3>Hidayath addoor</h3>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
 <!--  Mangalore Story Section -->
 <section class="mangalore-story">
     <h2 class="team-title">Marketing Team</h2>
@@ -391,8 +407,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Text Content Animation (Slide from Right)
     ScrollReveal().reveal(".about-content", {
-        origin: "right",
-        distance: "50px",
+        origin: "left",
+        distance: "10px",
         duration: 1000,
         delay: 500,
         opacity: 0,

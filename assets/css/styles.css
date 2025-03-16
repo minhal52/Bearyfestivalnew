@@ -286,25 +286,29 @@ to {
     justify-content: center;
     align-items: center;
     padding: 50px;
+    max-width: 1300px; /* Increased width */
+    margin: 0 auto; /* Centering */
+    width: 90%;
 }
 
 .about-section {
     display: flex;
     align-items: center;
-    max-width: 1000px;
-    gap: 30px;
+    max-width: 1300px;
+    gap: 50px;
+    width: 100%;
 }
 
 /* 📷 Image Styling */
 .about-img {
-    width: 350px;
-    height: 250px;
+    width: 400px;
+    height: 280px;
     border-radius: 10px;
 }
 
 /* 📄 Content Styling */
 .about-content {
-    width: 50%;
+    width: 60%;
 }
 
 .about-content h2 {
@@ -319,74 +323,121 @@ to {
     line-height: 1.6;
 }
 
-/* 🌍 Responsive Design */
+/* 🌍 Responsive Design - Mobile Fixes */
 @media (max-width: 768px) {
+    .about-container {
+        width: 100%;
+        padding: 30px 15px; /* Reduce padding for mobile */
+    }
+
     .about-section {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 25px; /* Add more spacing */
     }
 
     .about-img {
-        width: 200px; /* Smaller image */
-        height: 150px;
+        width: 90%; /* Responsive width */
+        max-width: 300px; /* Prevent oversized images */
+        height: auto;
     }
 
     .about-content {
-        width: 90%;
+        width: 90%; /* Make text take more space */
     }
 
     .about-content h2 {
-        font-size: 22px;
+        font-size: 24px; /* Increase mobile font size */
     }
 
     .about-content p {
-        font-size: 14px;
+        font-size: 16px;
+        line-height: 1.7;
     }
 }
 
+/* 🔹 Large Screen Enhancements */
+@media (min-width: 1024px) {
+    .about-img {
+        width: 500px; /* Bigger image */
+        height: 350px;
+    }
+
+    .about-content h2 {
+        font-size: 40px; /* Larger heading */
+    }
+
+    .about-content p {
+        font-size: 20px;
+        line-height: 1.8;
+    }
+}
 
 /* 👑 Founders Section */
 .founders {
     text-align: center;
     padding: 40px 20px;
-    background-color:white;
+    background-color: white;
 }
 
 .founders-title {
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: teal;
     text-transform: uppercase;
 }
 
+/* Layout container */
 .founders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Founder card styling */
+.founder-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.founder-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Fixed size for all images */
+.founder-card img {
+    width: 180px;  /* Set a fixed width */
+    height: 230px; /* Set a fixed height */
+    object-fit: cover; /* Ensures images are cropped properly */
+    border-radius: 10px;
+}
+
+/* First founder is centered above */
+.founder-top {
+    margin-bottom: 20px;
+}
+
+/* Remaining founders in a row */
+.founders-bottom {
     display: flex;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
 }
 
-.founder {
-    text-align: center;
-    max-width: 250px;
-}
-
-.founder img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    mix-blend-mode: lighten;
-}
-
+/* Founder names */
 .founder h3 {
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 10px;
     font-weight: 600;
 }
-
 
 /* 📢 Mangalore Story (Single Card) */
 .mangalore-story {
