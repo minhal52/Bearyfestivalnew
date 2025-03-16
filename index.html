@@ -534,6 +534,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+    ScrollReveal().reveal('.events-title', {
+        delay: 200,
+        duration: 1000,
+        origin: 'top',
+        distance: '50px',
+        easing: 'ease-in-out',
+        opacity: 0,
+    });
+
+    ScrollReveal().reveal('.event-container', {
+        delay: 300,
+        duration: 1000,
+        origin: 'bottom',
+        distance: '50px',
+        easing: 'ease-in-out',
+        opacity: 0,
+        interval: 200, /* Stagger effect */
+    });
+
     </script>
 
 </body>
