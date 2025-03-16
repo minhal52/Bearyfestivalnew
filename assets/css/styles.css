@@ -1,4 +1,9 @@
-  /* Apply Fonts */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Apply Fonts */
   body {
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -759,3 +764,50 @@ color: black;
                 width: 70%;
             }
         }
+
+        /* Footer Styling */
+.footer {
+    background: teal; /* Light background */
+    color: white; /* Dark text for contrast */
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact p, .footer-location p, .footer-text p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+/* Font Awesome Icon Styling */
+.footer i {
+    color:white;
+    margin-right: 8px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 600px) {
+    .footer-container {
+        text-align: center;
+        padding: 10px;
+    }
+}
