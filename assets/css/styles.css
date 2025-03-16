@@ -812,11 +812,12 @@ color: black;
     }
 }
 
-
+/* Default Layout */
 .events-section {
     max-width: 1100px;
     margin: auto;
 }
+
 .events-title {
     font-size: 2rem;
     font-weight: bold;
@@ -825,6 +826,7 @@ color: black;
     text-align: center;
     display: block;
 }
+
 .event-container {
     display: flex;
     align-items: center;
@@ -833,86 +835,75 @@ color: black;
     margin: 20px 0;
     padding: 20px;
     border-radius: 10px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     transition: transform 0.3s ease-in-out;
 }
+
 .event-container:hover {
     transform: scale(1.02);
 }
+
 .event-image {
-    width: 400px; /* Fixed width for large screens */
-    height: 250px; /* Fixed height for large screens */
+    width: 400px;
+    height: 250px;
     border-radius: 10px;
     object-fit: cover;
 }
+
 .event-details {
     width: 50%;
     text-align: left;
 }
+
 .event-title {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
     color: #3a0404;
 }
+
 .event-description {
     font-size: 1rem;
     color: black;
 }
 
-/* Alternate layout for even and odd sections */
-.event-container:nth-child(odd) .event-image {
-    order: 1;
-}
-.event-container:nth-child(odd) .event-details {
-    order: 2;
-}
-.event-container:nth-child(even) .event-image {
-    order: 2;
-}
-.event-container:nth-child(even) .event-details {
-    order: 1;
-}
-
-/* Responsive Design for Mobile */
+/* ✅ Mobile: Title first, then image, then content */
 @media screen and (max-width: 768px) {
     .event-container {
+        display: flex;
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
-    .event-image, .event-details {
-        width: 100%;
+
+    .event-title {
+        order: -2; /* Title first */
+        font-size: 1.5rem;
+        text-align: center;
     }
+
     .event-image {
-        height: 200px; /* Adjusted height for mobile */
+        width: 100%;
+        height: auto;
+        order: -1; /* Image second */
     }
+
     .event-details {
+        width: 100%;
         margin-top: 10px;
-    }
-    .event-container .event-image {
-        order: 1;
-    }
-    .event-container .event-details {
-        order: 2;
+        order: 2; /* Content last */
+        text-align: center;
     }
 }
 
-/* For very small screens */
+/* ✅ Very Small Screens: Further Adjustments */
 @media screen and (max-width: 480px) {
     .event-image {
-        height: 180px; /* Slightly smaller height for small devices */
-    }
-}
-
-/* Increase font size for large screens */
-@media screen and (min-width: 1200px) {
-    .events-title {
-        font-size: 2.5rem; /* Larger title */
+        height: 180px; /* Adjusted height */
     }
     .event-title {
-        font-size: 2rem; /* Bigger event titles */
+        font-size: 1.3rem;
     }
     .event-description {
-        font-size: 1.2rem; /* Slightly larger description */
+        font-size: 1rem;
     }
 }
