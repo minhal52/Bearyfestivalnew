@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karnataka Beary Festival 2025</title>
     <!-- Primary Meta Tags -->
 <meta name="title" content="Karnataka Beary Festival 2025 - Beary Mela">
 <meta name="description" content="Join the grand celebration of Karnataka Beary Festival 2025 in Mangalore! Experience the vibrant culture, traditions, and flavors of Beary heritage. Don't miss out!">
@@ -29,538 +28,635 @@
 <!-- Canonical Tag (Avoid Duplicate Content Issues) -->
 <link rel="canonical" href="https://bearyfestival2025.geekbudsdesigns.com/"> 
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>BearyMela - Beach Theme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <style>
-        /* Reset & Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            overflow-x: hidden;
-        }
-        :root {
-  --color-dark: #0f172a;
-  --color-light: #f8fafc;
-  --color-accent-1: #38bdf8;
-  --color-accent-2: #818cf8;
-  --color-accent-3: #c084fc;
-  --color-accent-4: #fb7185;
-  --font-primary: "Space Grotesk", sans-serif;
+</head>
+<style>
+
+/* 🌟 NAVBAR STYLES */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centering nav links */
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: transparent; /* Always transparent */
 }
 
-        /* Scene */
-        #scene {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* Add a slight opacity when scrolling */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.3); /* 30% opacity black */
+}
 
-        /* Starter Text */
-        #starter {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
-            font-weight: bold;
-            text-align: center;
-            color: white;
-            cursor: pointer;
-            z-index: 3; /* Ensure it's above the curtain */
-            transition: opacity 1s ease-in-out;
-        }
 
-        @media (max-width: 768px) {
-    #starter {
-        font-size: 1rem; /* Reduce font size for smaller screens */
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90%; /* Ensure proper spacing */
-        white-space: normal; /* Allow text wrapping if needed */
-        padding: 10px; /* Add padding for better touch accessibility */
+/* Logo */
+.logo img {
+    height: 50px;
+    position: absolute;
+    left: 20px; /* Keeps logo aligned on the left */
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f4d03f;
+}
+
+/* Remove hamburger menu */
+.hamburger {
+    display: none !important;
+}
+
+/* 📱 Mobile Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center; /* Center the nav links */
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 45px;
+        left: 10px; /* Adjusted for smaller screens */
+    }
+
+    .nav-links {
+        flex-direction: row; /* Keep nav links in a row */
+        gap: 20px; /* Adjust spacing */
     }
 }
 
-
-        /* Curtain */
-        #curtain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            z-index: 2;
-        }
-
-        .left, .right {
-            width: 50%;
-            height: 100%;
-            background-image: url("assets/img/curtain.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            transition: transform 2s ease-in-out;
-        }
-
-        .left {
-            transform-origin: center right;
-        }
-
-        .right {
-            transform-origin: center left;
-        }
-
-        /* Curtain Open Animation */
-        #curtain.open .left {
-            transform: translateX(-100%) scale(0, 2);
-        }
-
-        #curtain.open .right {
-            transform: translateX(100%) scale(0, 2);
-        }
-
-        /* Scene Expansion */
-        #scene.expand {
-            background-color: rgb(32, 32, 32);
-            transition: background-color 2s ease-in-out;
-        }
-
-        /* Fade Out Effect for Starter Text */
-        #starter.fade-out {
-            opacity: 0;
-        }
-
-        
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--color-dark);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.loader-container {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.progress-ring {
-  transform: rotate(-90deg);
-}
-
-.progress-ring-bg {
-  fill: transparent;
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 4px;
-}
-
-.progress-ring-circle {
-  fill: transparent;
-  stroke: var(--color-accent-1);
-  stroke-width: 4px;
-  stroke-dasharray: 565.48; /* 2 * PI * r */
-  stroke-dashoffset: 565.48; /* Initial state - fully empty */
-  transition: stroke 0.5s ease;
-}
-
-.loader-content {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.loading-stage {
-  position: relative;
-  height: 30px;
-  width: 100px;
-  overflow: hidden;
-}
-
-.stage-current,
-.stage-next {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-}
-
-.stage-current {
-  transform: translateY(0);
-}
-
-.stage-next {
-  transform: translateY(30px);
-}
-
-.percentage {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-top: 0.5rem;
-}
-
-.loader-shapes {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.3;
-}
-
-.shape {
-  position: absolute;
-  background: linear-gradient(
-    45deg,
-    var(--color-accent-1),
-    var(--color-accent-2)
-  );
-  border-radius: 50%;
-  filter: blur(40px);
-}
-
-.shape-1 {
-  width: 300px;
-  height: 300px;
-  top: 20%;
-  left: 20%;
-  transform: translate(-50%, -50%) scale(0);
-}
-
-.shape-2 {
-  width: 400px;
-  height: 400px;
-  top: 70%;
-  right: 30%;
-  background: linear-gradient(
-    45deg,
-    var(--color-accent-2),
-    var(--color-accent-3)
-  );
-  transform: translate(50%, -50%) scale(0);
-}
-
-.shape-3 {
-  width: 250px;
-  height: 250px;
-  bottom: 15%;
-  right: 15%;
-  background: linear-gradient(
-    45deg,
-    var(--color-accent-3),
-    var(--color-accent-4)
-  );
-  transform: translate(50%, 50%) scale(0);
-}
-
-    </style>
-</head>
+</style>
 <body>
-    <div class="preloader">
-        <div class="loader-container">
-          <svg class="progress-ring" width="200" height="200">
-            <circle class="progress-ring-bg" cx="100" cy="100" r="90"></circle>
-            <circle class="progress-ring-circle" cx="100" cy="100" r="90"></circle>
-          </svg>
-          <div class="loader-content">
-            <div class="loading-stage">
-              <div class="stage-current">Loading</div>
-              <div class="stage-next">Ready</div>
-            </div>
-            <div class="percentage">0</div>
-          </div>
+    
+        <!--  NAVBAR SECTION -->
+        <nav class="navbar">
+        
+             <ul class="nav-links">
+                 <li><a href="#">Home</a></li>
+                 <li><a href="#about">About</a></li>
+                 <li><a href="#gallery">Gallery</a></li>
+                 <li><a href="#contact">Contact</a></li>
+             </ul>
+             <!--  Hamburger Menu -->
+             <div class="hamburger" onclick="toggleMenu()">
+                 <span></span>
+                 <span></span>
+                 <span></span>
+             </div>
+         </nav>
+     
+   <!--  HERO SECTION -->
+   <section class="hero">
+       <video autoplay muted loop playsinline class="hero-video">
+           <source src="assets/img/oceanvdeo.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+       </video>
+
+       <!--  Logo -->
+       <div class="hero-logo">
+        <img src="assets/img/kbffinallogo.png" alt="BearyMela Logo">
+
+       </div>
+
+       <!-- Title Image -->
+       <div class="hero-title">
+           <img src="assets/img/bearyfestivalpng-removebg-preview.png" alt="BearyMela Title">
+       </div>
+
+       <!--  Subtitle Below Title -->
+       <div class="hero-subtitle">
+           By Mangalore Story
+       </div>
+
+       <!--  Date Image Below Subtitle -->
+       <div class="hero-date">
+           <img src="assets/img/datepng-removebg-preview.png" alt="Event Date">
+       </div>
+   </section>
+ 
+   <div class="news">
+    <div class="scroll-wrapper">
+        <div class="scroll-section">
+            <p>
+                Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award | Cultural Activities | Achievers Recognition | Food Festival | Talent Show | Job Mela | Kids Old Fun Games | Startup Platform | Cricket Match | Family Gathering | Food Competition | Mehandi Competition | Pravasigalige 1 Day Gowji Gammath | Pravasi Award | Social Award | Cultural Award | Madyama Award | Sports Award | Marhoom Award | Youth Motivation Award
+            </p>
+           
+            
         </div>
-        <div class="loader-shapes">
-          <div class="shape shape-1"></div>
-          <div class="shape shape-2"></div>
-          <div class="shape shape-3"></div>
+    </div>
+</div>
+<!--  GUESTS SECTION -->
+<section class="guests">
+    <h2 class="guests-title">Event Patrons</h2>
+    <div class="guests-container">
+        <!-- Guest 1 -->
+        <div class="guest">
+            <img src="assets/img/24-removebg-preview.png" alt="Guest 1">
+            <h3>UT Khader</h3>
+            <p>Hon. speaker of the
+                karnataka legislative assembly</p>
         </div>
-      </div>
-      
-    <div id="scene">
-        <div id="starter"></div> 
-        <div id="curtain">
-            <div class="left"></div>
-            <div class="right"></div>
+
+        <!-- Guest 2 -->
+        <div class="guest">
+            <img src="assets/img/8-removebg-preview.png" alt="Guest 2">
+            <h3> UT Ifthikar Ali</h3>
+            <p> chairman of state allied and
+                health care council</p>
         </div>
-    </div>
- <!--  HERO SECTION -->
- <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="assets/img/oceanvdeo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!--  Logo -->
-    <div class="hero-logo">
-     <img src="assets/img/kbffinallogo.png" alt="BearyMela Logo">
-
-    </div>
-
-    <!-- Title Image -->
-    <div class="hero-title">
-        <img src="assets/img/bearyfestivalpng-removebg-preview.png" alt="BearyMela Title">
-    </div>
-
-    <!--  Subtitle Below Title -->
-    <div class="hero-subtitle">
-        By Mangalore Story
-    </div>
-
-    <!--  Date Image Below Subtitle -->
-    <div class="hero-date">
-        <img src="assets/img/datepng-removebg-preview.png" alt="Event Date">
     </div>
 </section>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    let hasOpened = false;
 
-    function showTime() {
-        if (hasOpened) return;
-        hasOpened = true;
+<!-- about us -->
+<section class="about-us">
+    <div class="about-container">
+        <!-- Image Left, Content Right -->
+        <div class="about-section">
+            <img src="assets/img/g4.jpg" alt="Karnataka Beary Festival" class="about-img">
+            <div class="about-content">
+                <h2>About Karnataka Beary Festival 2025</h2>
+                <p>
+                    Karnataka Beary Festival 2025 is a vibrant three-day celebration of culture, talent, and community, 
+                    taking place at Karavali Utsava Maidana, Mangalore from April 18-20, 2025. 
+                    This festival showcases the richness of Karnataka’s Beary heritage through cultural activities, 
+                    achievers' recognition, a food festival, talent shows, and more.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  FOUNDERS SECTION -->
+<section class="founders" id="about">
+    <h2 class="founders-title">Founders</h2>
+    <div class="founders-container">
+        <!-- First Founder (placed above) -->
+        <div class="founder founder-top">
+            <div class="founder-card">
+                <img src="assets/img/founder1.jpg" alt="Founder 1">
+                <h3>Iqbal Parliya</h3>
+            </div>
+        </div>
 
-        document.getElementById("curtain").classList.add("open");
-        document.getElementById("scene").classList.add("expand");
-        document.getElementById("starter").classList.add("fade-out");
+        <div class="founders-bottom">
+            <!-- Founder 2 -->
+            <div class="founder">
+                <div class="founder-card">
+                    <img src="assets/img/founder2.jpg" alt="Founder 2">
+                    <h3>Mansooru Ahmed</h3>
+                </div>
+            </div>
 
-        setTimeout(function() {
-            document.getElementById("starter").style.display = 'none';
-        }, 1000);
+            <!-- Founder 3 -->
+            <div class="founder">
+                <div class="founder-card">
+                    <img src="assets/img/founder3.jpg" alt="Founder 3">
+                    <h3>Mansooru Kundapura</h3>
+                </div>
+            </div>
 
-        // Replace the current page instantly
-        setTimeout(function() {
-            window.location.replace("home.html"); // Avoids back button issues
-        }, 1500);
-    }
+            <!-- Founder 4 -->
+            <div class="founder">
+                <div class="founder-card">
+                    <img src="assets/img/founder4.jpg" alt="Founder 4">
+                    <h3>Hidayath addoor</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    // Trigger animation and transition on Enter key press
-    document.addEventListener('keydown', function(event) {
-        if (event.key === "Enter") {
-            showTime();
-        }
-    });
+<!--  Mangalore Story Section -->
+<section class="mangalore-story">
+    <h2 class="team-title">Marketing Team</h2>
+    <div class="team-card">
+        <img src="assets/img/manglorestoryprofile.jpeg" alt="Marketing Team">
+        <h3>Mangalore Story</h3>
+        <!-- <p>Marketing Head</p> -->
+    </div>
+</section>
 
-    // Trigger on touch
-    document.addEventListener('touchstart', function() {
-        showTime();
-    }, { once: true });
+<div class="events-section">
+    <div class="events-title">Event Highlights</div>
 
-    // ✅ Add Mouse Click Functionality
-    document.addEventListener('click', function() {
-        showTime();
-    });
+    <div class="event-container">
+        <img src="assets/img/evnt4.jpg" class="event-image" alt="Cultural Activities">
+        <div class="event-details">
+            <div class="event-title">Cultural Activities</div>
+            <div class="event-description">
+                 Immerse yourself in a vibrant celebration of art, music, and dance!  
+                 Experience captivating performances showcasing diverse traditions and heritage.  
+                 From soulful melodies to energetic dances, witness talent from all around.  
+                 A perfect blend of culture, creativity, and unforgettable moments awaits!
+            </div>
+        </div>
+    </div>
 
+    <div class="event-container">
+        <img src="assets/img/evnt1.jpg" class="event-image" alt="Achievers Recognition">
+        <div class="event-details">
+            <div class="event-title">Achievers Recognition</div>
+            <div class="event-description">
+                 Celebrating individuals who have made remarkable achievements in their fields.  
+                 Recognizing hard work, dedication, and excellence in various domains.  
+                 Inspiring success stories that motivate and empower future achievers.  
+                 Join us in honoring those who strive for greatness and set new benchmarks!
+            </div>
+        </div>
+    </div>
+
+    <div class="event-container">
+        <img src="assets/img/event3.jpg" class="event-image" alt="Food Festival">
+        <div class="event-details">
+            <div class="event-title">Food Festival</div>
+            <div class="event-description">
+                 Embark on a flavorful journey with mouth-watering dishes from across the globe.  
+                 Experience the richness of diverse cuisines, from traditional flavors to modern delights.  
+                 Savor delicious street food, gourmet meals, and sweet treats in one grand feast.  
+                 A paradise for food lovers—come taste, explore, and indulge in culinary excellence!  
+            </div>
+        </div>
+    </div>
+
+    <div class="event-container">
+        <img src="assets/img/talentshw.jpg" class="event-image" alt="Talent Show">
+        <div class="event-details">
+            <div class="event-title">Talent Show</div>
+            <div class="event-description">
+                 Step into the spotlight and showcase your incredible talents on stage!  
+                 From singing and dancing to comedy and magic, all skills are welcome.  
+                 Watch amazing performances that inspire, entertain, and leave you in awe.  
+                 A platform to shine, compete, and celebrate creativity like never before!  
+            </div>
+        </div>
+    </div>
+
+    <div class="event-container">
+        <img src="assets/img/g5.jpg" class="event-image" alt="Cricket Match">
+        <div class="event-details">
+            <div class="event-title">Cricket Match</div>
+            <div class="event-description">
+                 Get ready for an action-packed cricket match filled with thrill and excitement!  
+                 Watch teams battle it out with powerful shots, fast bowling, and stunning catches.  
+                 Cheer for your favorite players as they showcase skill, teamwork, and sportsmanship.  
+                 A day of intense competition and unforgettable moments—don’t miss the game!  
+            </div>
+        </div>
+    </div>
+
+    <div class="event-container">
+        <img src="assets/img/evnt2.jpg" class="event-image" alt="Kids Old Fun Games">
+        <div class="event-details">
+            <div class="event-title">Kids Old Fun Games</div>
+            <div class="event-description">
+                 Take a nostalgic trip back to the good old days with classic childhood games!  
+                 Watch kids enjoy sack races, tug-of-war, hopscotch, and many more fun activities.  
+                 A perfect blend of laughter, teamwork, and friendly competition for all ages.  
+                 Relive the joy of simple yet exciting games that bring families and friends together!  
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--  KBF LAYOUT PLAN SECTION -->
+<section class="kbf-layout">
+    <h2>Karnataka Beary Festival Layout Plan</h2>
+    <p>Explore the Karnataka Beary Festival 2025 layout and discover the key areas, stages, and booths.</p>
+    
+    <!-- Layout Image -->
+    <div class="layout-container">
+        <img src="assets/img/KBFLAYOUT[1].jpg" alt="KBF Layout Plan">
+    </div>
+
+    <div class="sponsor-cta">
+        <h2>Are You Excited to Sponsor?</h2>
+        <p>Make an impact at the <strong>Karnataka Beary Festival 2025</strong>! Showcase your brand, connect with a vibrant audience, and be part of this grand celebration.</p>
+        
+        <button class="sponsor-btn" onclick="openSponsorForm()">Sponsorship Inquiry</button>
+    
+        <!-- Hidden Form -->
+        <div id="sponsor-form" class="sponsor-form">
+            <h3>Sponsorship Inquiry</h3>
+            <input type="text" id="sponsor-name" placeholder="Your Name" required>
+            <input type="tel" id="sponsor-phone" placeholder="Your Phone Number" required>
+            <input type="email" id="sponsor-email" placeholder="Your Email" required>
+            <textarea id="sponsor-message" placeholder="Enter your message..." required></textarea>
+            <button onclick="sendWhatsApp()">Send Inquiry on WhatsApp</button>
+            <button onclick="closeSponsorForm()" class="close-btn">Cancel</button>
+        </div>
+    </div>
+</section>
+
+<section class="program-gallery" id="gallery">
+    <h2 class="gallery-title">Program Gallery</h2>
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="assets/img/g4.jpg" alt="Gallery Image 1"></div>
+        <div class="gallery-item"><img src="assets/img/g1.jpg" alt="Gallery Image 2"></div>
+        <div class="gallery-item"><img src="assets/img/g2.jpg" alt="Gallery Image 3"></div>
+        <div class="gallery-item"><img src="assets/img/g3.jpg" alt="Gallery Image 4"></div>
+        <div class="gallery-item"><img src="assets/img/g5.jpg" alt="Gallery Image 5"></div>
+        <div class="gallery-item"><img src="assets/img/g10.jpg" alt="Gallery Image 6"></div>
+        <div class="gallery-item"><img src="assets/img/g8.jpg" alt="Gallery Image 6"></div>
+        <div class="gallery-item"><img src="assets/img/g6.jpg" alt="Gallery Image 6"></div>
+        
+
+    </div>
+</section>
+<div class="festival-description">
+    <p>
+        Join us for the <strong>Karnataka Beary Festival 2025</strong>, a vibrant three-day celebration of culture, talent, and community, held at <strong>Karavali Utsava Maidana Ballalbagh, Mangalore</strong> from <strong>April 18-20, 2025</strong>. This extravaganza promises an unforgettable experience, showcasing the best of Karnataka's Beary culture through cultural activities, achievers' recognition, food festival, talent show, job mela, kids' fun games, startup platform, cricket match, and family gathering. The festival will also feature competitions, including food and mehandi, and awards for outstanding contributions in various fields. Mark your calendars and get ready to experience the vibrant spirit of Karnataka's Beary community!
+    </p>
+</div>
+<div class="contact-section" id="contact">
+    <h2 style="text-align: center;">Connect Us</h2>
+    <form class="contact-form" onsubmit="sendWhatsAppMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="tel" id="phone" placeholder="Your Phone Number" required>
+        <select id="category" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Book a Stall">Book a Stall</option>
+            <option value="General Inquiry">General Inquiry</option>
+        </select>
+        <textarea id="message" placeholder="Enter your message..." required></textarea>
+        <button type="submit">Inquire</button>
+    </form>
+</div>
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-contact">
+            <p><i class="fas fa-phone"></i> <a href="tel:+91 9632781673">+91 9632781673 </a></p>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/9632781673" target="_blank">Chat Now</a></p>
+        </div>
+        <div class="footer-location">
+            <p><i class="fas fa-map-marker-alt"></i> Karavali Utsava Maidana , Mangalore</p>
+        </div>
+        <div class="footer-text">
+            <p>&copy; Karnataka Beary Mela 2025 All Rights Reserved.</p>
+            <p>Designed & Developed by <a href="https://geekbudsdesigns.com" target="_blank">Geek Buds Designs</a></p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const scrollSection = document.querySelector(".scroll-section");
+    const duplicateContent = scrollSection.innerHTML; // Clone the content
+
+    // Duplicate the text to prevent empty space
+    scrollSection.innerHTML += duplicateContent;
+
+    // Apply animation dynamically
+    scrollSection.style.display = "flex";
+    scrollSection.style.animation = "scrollText 250s linear infinite";
 });
 
-
-                // Wait for DOM to be fully loaded
-document.addEventListener("DOMContentLoaded", () => {
-  // Elements
-  const progressCircle = document.querySelector(".progress-ring-circle");
-  const percentageElement = document.querySelector(".percentage");
-  const stageCurrent = document.querySelector(".stage-current");
-  const stageNext = document.querySelector(".stage-next");
-  const preloader = document.querySelector(".preloader");
-  const content = document.querySelector(".content");
-  const title = document.querySelector(".content h1");
-  const paragraph = document.querySelector(".content p");
-  const shapes = document.querySelectorAll(".shape");
-
-  // Calculate the circumference of the circle
-  const radius = progressCircle.getAttribute("r");
-  const circumference = 2 * Math.PI * radius;
-
-  // Color stages
-  const colorStages = [
-    { accent: "#38bdf8", bg: "#0f172a" }, // Stage 1: Blue
-    { accent: "#818cf8", bg: "#131c2e" }, // Stage 2: Indigo
-    { accent: "#c084fc", bg: "#1a2234" }, // Stage 3: Purple
-    { accent: "#fb7185", bg: "#1e283a" } // Stage 4: Pink
-  ];
-
-  // Set initial stroke-dasharray and stroke-dashoffset
-  progressCircle.style.strokeDasharray = circumference;
-  progressCircle.style.strokeDashoffset = circumference;
-
-  // Initialize GSAP timeline
-  const tl = gsap.timeline();
-
-  // Animate in the shapes
-  tl.to(shapes, {
-    scale: 1,
-    duration: 2,
-    stagger: 0.3,
-    ease: "power3.out"
-  });
-
-  // Progress animation
-  tl.to(
-    progressCircle,
-    {
-      strokeDashoffset: 0,
-      duration: 5,
-      ease: "power1.inOut",
-      onUpdate: function () {
-        // Calculate and update percentage
-        const progress = Math.round(
-          (1 - progressCircle.style.strokeDashoffset / circumference) * 100
-        );
-        percentageElement.textContent = progress;
-
-        // Update colors based on progress
-        updateColors(progress);
-
-        // Grow shapes based on progress
-        updateShapes(progress);
-      }
-    },
-    0
-  );
-
-  // Animate to completion
-  tl.to([stageCurrent, stageNext], {
-    y: "-=30",
-    duration: 0.8,
-    ease: "power2.inOut"
-  })
-    .to(preloader, {
-      y: "-100vh",
-      duration: 1.2,
-      ease: "power3.inOut",
-      delay: 0.8
-    })
-    .set(
-      content,
-      {
-        visibility: "visible"
-      },
-      "<"
-    )
-    .to(
-      content,
-      {
-        opacity: 1,
-        duration: 1,
-        ease: "power2.out"
-      },
-      "<0.3"
-    )
-    .to(
-      [title, paragraph],
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power2.out"
-      },
-      "<0.2"
-    )
-    .set(preloader, {
-      display: "none"
-    });
-
-  // Function to update colors based on progress
-  function updateColors(progress) {
-    const stage = Math.floor(progress / 25);
-    if (stage < colorStages.length) {
-      progressCircle.style.stroke = colorStages[stage].accent;
-      document.documentElement.style.setProperty(
-        "--color-dark",
-        colorStages[stage].bg
-      );
-      document.documentElement.style.setProperty(
-        "--color-accent-1",
-        colorStages[0].accent
-      );
-      document.documentElement.style.setProperty(
-        "--color-accent-2",
-        colorStages[1].accent
-      );
-      document.documentElement.style.setProperty(
-        "--color-accent-3",
-        colorStages[2].accent
-      );
-      document.documentElement.style.setProperty(
-        "--color-accent-4",
-        colorStages[3].accent
-      );
-    }
-  }
-
-  // Function to update shapes based on progress
-  function updateShapes(progress) {
-    const scaleValue = 1 + progress / 100;
-
-    if (progress > 25) {
-      gsap.to(shapes[0], {
-        scale: scaleValue,
-        ease: "power1.out",
-        duration: 0.5
-      });
-    }
-    if (progress > 50) {
-      gsap.to(shapes[1], {
-        scale: scaleValue,
-        ease: "power1.out",
-        duration: 0.5
-      });
-    }
-    if (progress > 75) {
-      gsap.to(shapes[2], {
-        scale: scaleValue,
-        ease: "power1.out",
-        duration: 0.5
-      });
-    }
-  }
-});
-
-    ScrollReveal().reveal('.events-title', {
+document.addEventListener("DOMContentLoaded", function () {
+    ScrollReveal().reveal(".hero-logo img", {
+        origin: "top",
+        distance: "30px",
+        duration: 1000,
         delay: 200,
-        duration: 1000,
-        origin: 'top',
-        distance: '50px',
-        easing: 'ease-in-out',
         opacity: 0,
+        easing: "ease-in-out"
     });
 
-    ScrollReveal().reveal('.event-container', {
+    ScrollReveal().reveal(".hero-title img", {
+        scale: 0.85,
+        duration: 1000,
+        delay: 400,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+
+    ScrollReveal().reveal(".hero-subtitle", {
+        origin: "bottom",
+        distance: "20px",
+        duration: 1000,
+        delay: 600,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+
+    ScrollReveal().reveal(".hero-date img", {
+        origin: "bottom",
+        distance: "20px",
+        duration: 1000,
+        delay: 800,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Title Animation
+    ScrollReveal().reveal(".guests-title", {
+        origin: "bottom",
+        distance: "30px",
+        duration: 1000,
+        delay: 200,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+
+    // Guest Cards Animation
+    ScrollReveal().reveal(".guest", {
+        origin: "bottom",
+        distance: "30px",
+        duration: 1000,
+        delay: 400,
+        opacity: 0,
+        easing: "ease-in-out",
+        interval: 300 // Stagger effect
+    });
+
+    // Guest Names Animation
+    ScrollReveal().reveal(".guest h3", {
+        origin: "bottom",
+        distance: "20px",
+        duration: 800,
+        delay: 500,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+
+    // Guest Description Animation
+    ScrollReveal().reveal(".guest p", {
+        origin: "bottom",
+        distance: "20px",
+        duration: 800,
+        delay: 500,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Image Animation (Slide from Left)
+    ScrollReveal().reveal(".about-img", {
+        origin: "left",
+        distance: "50px",
+        duration: 1000,
         delay: 300,
-        duration: 1000,
-        origin: 'bottom',
-        distance: '50px',
-        easing: 'ease-in-out',
         opacity: 0,
-        interval: 200, /* Stagger effect */
+        easing: "ease-in-out"
     });
 
-    </script>
+    // Text Content Animation (Slide from Right)
+    ScrollReveal().reveal(".about-content", {
+        origin: "left",
+        distance: "10px",
+        duration: 1000,
+        delay: 500,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Title Animation (Slide-up)
+    ScrollReveal().reveal(".founders-title", {
+        origin: "bottom",
+        distance: "30px",
+        duration: 1000,
+        delay: 200,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
 
+    // Founder Cards Animation (Zoom-in One by One)
+    ScrollReveal().reveal(".founder", {
+        scale: 0.85,
+        duration: 1000,
+        delay: 300,
+        opacity: 0,
+        easing: "ease-in-out",
+        interval: 200 // Creates a slight delay for each founder
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Title Animation (Slide-up)
+    ScrollReveal().reveal(".team-title", {
+        origin: "bottom",
+        distance: "30px",
+        duration: 1000,
+        delay: 200,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+
+    // Team Card Animation (Zoom-in)
+    ScrollReveal().reveal(".team-card", {
+        scale: 0.85,
+        duration: 1000,
+        delay: 300,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Title & Description Animation (Slide-up)
+    ScrollReveal().reveal(".kbf-layout h2, .kbf-layout p", {
+        origin: "bottom",
+        distance: "30px",
+        duration: 1000,
+        delay: 200,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+
+    // Layout Image Animation (Zoom-in)
+    ScrollReveal().reveal(".layout-container img", {
+        scale: 0.85,
+        duration: 1000,
+        delay: 300,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+
+    // Sponsor CTA & Button Animation (Slide-up)
+    ScrollReveal().reveal(".sponsor-cta h2, .sponsor-cta p, .sponsor-btn", {
+        origin: "bottom",
+        distance: "30px",
+        duration: 1000,
+        delay: 300,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+
+
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Title Animation (Slide-up)
+    ScrollReveal().reveal(".gallery-title", {
+        origin: "bottom",
+        distance: "30px",
+        duration: 1000,
+        delay: 200,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+
+    // Gallery Images Animation (Zoom-in with Staggered Effect)
+    ScrollReveal().reveal(".gallery-item", {
+        scale: 0.85,
+        duration: 800,
+        delay: 200,
+        opacity: 0,
+        easing: "ease-in-out",
+        interval: 150 // Stagger effect for each image
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Festival Description Animation
+    ScrollReveal().reveal(".festival-description", {
+        origin: "bottom",
+        distance: "30px",
+        duration: 1000,
+        delay: 300,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    // Contact Section Animation
+    ScrollReveal().reveal(".contact-section", {
+        origin: "bottom",
+        distance: "30px",
+        duration: 1000,
+        delay: 300,
+        scale: 0.95,
+        opacity: 0,
+        easing: "ease-in-out"
+    });
+});
+
+</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
