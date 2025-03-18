@@ -418,18 +418,21 @@ to {
 
 /* Fixed size for all images */
 .founder-card img {
-    width: 180px;  /* Set a fixed width */
-    height: 230px; /* Set a fixed height */
-    object-fit: cover; /* Ensures images are cropped properly */
+    width: 180px;  
+    height: 230px; 
+    object-fit: cover; 
     border-radius: 10px;
 }
 
-/* First founder is centered above */
-.founder-top {
-    margin-bottom: 20px;
+/* Top Founders - Two in a row */
+.founders-top {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-/* Remaining founders in a row */
+/* Bottom Founders - Two in a row */
 .founders-bottom {
     display: flex;
     justify-content: center;
@@ -442,6 +445,15 @@ to {
     font-size: 20px;
     margin-top: 10px;
     font-weight: 600;
+}
+/* Organizing Committee Title */
+.committee-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 40px 0 20px;
+    color: #3a0404;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 /* 📢 Mangalore Story (Single Card) */
