@@ -78,19 +78,21 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
 .hero-logo {
     position: relative;
     z-index: 3;
-    margin-top: 180px; /* Moved the logo slightly down */
+    margin-top: 200px; /* Moved the logo slightly down */
 }
 
 .hero-logo img {
-    width: 150px;
+    width: 100px;
     height: auto;
+    margin-top: 50px;
+
 }
 
 /* 📌 Title Image */
 .hero-title {
     position: relative;
     z-index: 3;
-    margin-top: -120px; /* Ensure title stays below logo */
+    margin-top: -180px; /* Ensure title stays below logo */
 }
 
 .hero-title img {
@@ -107,7 +109,7 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
     color:white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     z-index: 3;
-    margin-top: -50px; /* Adjust spacing */
+    margin-top: -130px; /* Adjust spacing */
 }
 
 /* 📅 Date Image Styling */
@@ -120,7 +122,7 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
     width:auto ;
     /* max-width: 400px; */
     height: auto;
-    margin-top: -150px;
+    margin-top: -160px;
 }
 
 /* 📱 Responsive Adjustments */
@@ -136,12 +138,88 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
     .hero-title img {
         width: 85%;
         max-width: 400px;
-        margin-top: 50px;
+        /* margin-top: 30px; */
     }
 
     .hero-logo img {
         width: 120px;
-        margin-top: 150px;
+        margin-top: -150px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        margin-top: -40px; /* Adjust spacing */
+    }
+
+    .hero-date img {
+        width: 350px;
+        /* max-width: 300px; */
+        margin-top: -60px;
+    }
+}
+
+/* 🎟️ Hero Buttons */
+.hero-buttons {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px; /* Adjust spacing */
+    flex-wrap: wrap; /* Ensures buttons stay in one line */
+}
+
+/* 🟠 Common Button Styles */
+.hero-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* 🔸 Sponsor Button */
+.sponsor-btn {
+    background: #ff6600; /* Orange */
+}
+
+.sponsor-btn:hover {
+    background: #cc5200; /* Darker Orange */
+}
+
+/* 🔹 Stall Button */
+.stall-btn {
+    background:#3a0404; /* Orange */
+}
+
+.stall-btn:hover {
+    background: #0056b3; /* Darker Blue */
+}
+
+/* 📱 Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        gap: 5px; /* Reduce spacing for mobile */
+    }
+
+    .hero-logo {
+        margin-top: -70px; /* Adjusted for mobile */
+    }
+
+    .hero-title img {
+        width: 85%;
+        max-width: 400px;
+        margin-top: 90px;
+    }
+
+    .hero-logo img {
+        width: 120px;
+        margin-top: 180px;
     }
 
     .hero-subtitle {
@@ -151,10 +229,23 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
 
     .hero-date img {
         width: 350px;
-        /* max-width: 300px; */
         margin-top: -110px;
     }
+
+    /* 📱 Keep Buttons in One Line */
+    .hero-buttons {
+        flex-direction: row; /* Ensure buttons stay in one line */
+        justify-content: center; /* Center align buttons */
+        gap: 10px;
+    }
+
+    .hero-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+    
 }
+
 /* General Styling for the News Section */
 .news {
 width: 100%;
