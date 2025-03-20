@@ -341,7 +341,7 @@ to {
     color: #3a0404e1;
 
 
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .guests-container {
@@ -469,6 +469,25 @@ to {
     }
 }
 
+/* Large Screens - Increase Image Size & Center Cards */
+@media (min-width: 1025px) {
+    .founders-top {
+        display: flex;
+        justify-content: center; /* Ensures cards stay in the center */
+        gap: 60px; /* Increase spacing between cards */
+    }
+
+    .founder-cardmain img {
+        width: 220px; /* Increased width */
+        height: 280px; /* Increased height */
+    }
+
+    .founder-cardmain {
+        max-width: 280px; /* Increase card size */
+        padding: 25px; /* Adjust padding */
+    }
+}
+
 /* 👑 Founders Section */
 .founders {
     text-align: center;
@@ -481,7 +500,7 @@ to {
     font-weight: 700;
     margin-bottom: 30px;
     color: teal;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 /* Layout container */
@@ -492,6 +511,90 @@ to {
     gap: 20px;
 }
 
+/* Founder container - Centered alignment */
+.founders-top,
+.founders-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Ensures proper centering */
+    gap: 40px; /* Space between cards */
+    width: 100%;
+    max-width: 1000px; /* Keeps it centered */
+    margin: 0 auto;
+}
+
+/* Founder card styling */
+.founder-cardmain {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.founder-cardmain:hover {
+    transform: translateY(-5px);
+}
+
+/* Fixed size for all images */
+.founder-cardmain img {
+    width: 180px;  
+    height: 230px; 
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+/* 🔽 Responsive Design 🔽 */
+
+/* Large Screens - Keep Centered */
+@media (min-width: 1025px) {
+    .founders-top,
+    .founders-bottom {
+        justify-content: center; /* Keeps cards centered */
+    }
+}
+
+/* Medium Screens (Tablets) - Adjust Image Size */
+@media (max-width: 1024px) {
+    .founders-top,
+    .founders-bottom {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 Cards per row */
+        gap: 20px;
+        justify-content: center;
+    }
+    .founder-cardmain img {
+        width: 160px;
+        height: 200px;
+    }
+}
+
+/* Small Screens (Mobile) - 2 Cards Per Row */
+@media (max-width: 768px) {
+    .founders-top,
+    .founders-bottom {
+        grid-template-columns: repeat(2, 1fr); /* 2 Cards per row */
+    }
+    .founder-cardmain img {
+        width: 140px;
+        height: 180px;
+    }
+}
+
+/* Extra Small Screens (Below 480px) - 1 Card Per Row */
+@media (max-width: 480px) {
+    .founders-top,
+    .founders-bottom {
+        grid-template-columns: repeat(1, 1fr); /* 1 Card per row */
+    }
+    .founder-cardmain img {
+        width: 120px;
+        height: 160px;
+    }
+}
+
 /* Founder card styling */
 .founder-card {
     background: #f8f9fa;
@@ -499,7 +602,7 @@ to {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: 250px;
+    max-width: 250px; /* Default width */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -515,20 +618,13 @@ to {
     border-radius: 10px;
 }
 
-/* Top Founders - Two in a row */
-.founders-top {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-/* Bottom Founders - Two in a row */
+/* Founders section layout (default: large screens) */
+.founders-top,
 .founders-bottom {
     display: flex;
-    justify-content: center;
-    gap: 40px;
     flex-wrap: wrap;
+    justify-content: center; /* Centers items */
+    gap: 40px;
 }
 
 /* Founder names */
@@ -537,14 +633,81 @@ to {
     margin-top: 10px;
     font-weight: 600;
 }
+
 /* Organizing Committee Title */
 .committee-title {
     font-size: 28px;
     font-weight: 700;
     margin: 40px 0 20px;
     color: #3a0404;
-    text-transform: uppercase;
+    text-transform: none;
     text-align: center;
+}
+
+/* 🌐 Responsive Design */
+
+/* Medium Screens (Tablets) - 3 Cards Per Row */
+@media only screen and (max-width: 1024px) {
+    .founders-top,
+    .founders-bottom {
+        grid-template-columns: repeat(3, 1fr); /* 3 Cards per row */
+        gap: 20px;
+    }
+
+    .founder-card {
+        max-width: 220px; /* Slightly smaller */
+    }
+
+    .founder-card img {
+        width: 160px;
+        height: 200px;
+    }
+}
+
+/* Small Screens (Mobile) - 2 Cards Per Row */
+@media only screen and (max-width: 768px) {
+    .founders-top,
+    .founders-bottom {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 15px;
+    }
+
+    .founder-card {
+        max-width: 180px; /* Reduce card size */
+        padding: 15px;
+    }
+
+    .founder-card img {
+        width: 140px;
+        height: 180px;
+    }
+
+    .founder h3 {
+        font-size: 18px;
+    }
+}
+
+/* Extra Small Screens (Below 480px) - 1 Card Per Row */
+@media only screen and (max-width: 480px) {
+    .founders-top,
+    .founders-bottom {
+        grid-template-columns: repeat(1, 1fr); /* 1 column */
+        gap: 10px;
+    }
+
+    .founder-card {
+        max-width: 160px;
+        padding: 10px;
+    }
+
+    .founder-card img {
+        width: 120px;
+        height: 160px;
+    }
+
+    .founder h3 {
+        font-size: 16px;
+    }
 }
 
 /* 📢 Mangalore Story (Single Card) */
