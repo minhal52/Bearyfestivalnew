@@ -1,7 +1,8 @@
-
-html {
-    scroll-behavior: smooth;
+html, body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    max-width: 100%; /* Ensures content doesn't exceed viewport width */
 }
+
 
 /* Apply Fonts */
   body {
