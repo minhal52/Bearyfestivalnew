@@ -4,6 +4,80 @@ html, body {
 }
 
 
+/* 🌟 NAVBAR STYLES */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centering nav links */
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: transparent; /* Always transparent */
+}
+
+/* Add a slight opacity when scrolling */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.3); /* 30% opacity black */
+}
+
+
+/* Logo */
+.logo img {
+    height: 50px;
+    position: absolute;
+    left: 20px; /* Keeps logo aligned on the left */
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f4d03f;
+}
+
+/* Remove hamburger menu */
+.hamburger {
+    display: none !important;
+}
+
+/* 📱 Mobile Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center; /* Center the nav links */
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 45px;
+        left: 10px; /* Adjusted for smaller screens */
+    }
+
+    .nav-links {
+        flex-direction: row; /* Keep nav links in a row */
+        gap: 20px; /* Adjust spacing */
+    }
+}
+
 /* Apply Fonts */
   body {
     font-family: 'Lato', sans-serif;
@@ -53,17 +127,7 @@ html, body {
     color: white;
     gap: 10px; /* Adds spacing between elements */
 }
-/* 🔳 Overlay */
-/* .hero::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 = fully opaque) */
-/* z-index: 2; Ensures it's above the video but below the content */
-/* } */ 
+
 /* 🎬 Background Video */
 .hero-video {
     position: absolute;
@@ -79,13 +143,14 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
 .hero-logo {
     position: relative;
     z-index: 3;
-    margin-top: 200px; /* Moved the logo slightly down */
+    margin-top: 40px; /* Moved the logo slightly down */
+    margin-bottom: 90px;
 }
 
 .hero-logo img {
     width: 100px;
     height: auto;
-    margin-top: 50px;
+    margin-top: 20px;
 
 }
 
@@ -93,7 +158,7 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
 .hero-title {
     position: relative;
     z-index: 3;
-    margin-top: -180px; /* Ensure title stays below logo */
+    margin-top: -210px; /* Ensure title stays below logo */
 }
 
 .hero-title img {
@@ -126,38 +191,6 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
     margin-top: -160px;
 }
 
-/* 📱 Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero {
-        gap: 5px; /* Reduce spacing for mobile */
-    }
-
-    .hero-logo {
-        margin-top: 10px; /* Adjusted for mobile */
-    }
-
-    .hero-title img {
-        width: 85%;
-        max-width: 400px;
-        /* margin-top: 30px; */
-    }
-
-    .hero-logo img {
-        width: 120px;
-        margin-top: -150px;
-    }
-
-    .hero-subtitle {
-        font-size: 1.3rem;
-        margin-top: -40px; /* Adjust spacing */
-    }
-
-    .hero-date img {
-        width: 350px;
-        /* max-width: 300px; */
-        margin-top: -60px;
-    }
-}
 
 /* 🎟️ Hero Buttons */
 .hero-buttons {
@@ -209,13 +242,13 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
     }
 
     .hero-logo {
-        margin-top: -70px; /* Adjusted for mobile */
+        margin-top: -180px; /* Adjusted for mobile */
     }
 
     .hero-title img {
         width: 85%;
         max-width: 400px;
-        margin-top: 90px;
+        margin-top: 60px;
     }
 
     .hero-logo img {
@@ -228,10 +261,7 @@ background: rgba(0, 0, 0, 0); /* Adjust transparency (0 = fully transparent, 1 =
         margin-top: -50px; /* Adjust spacing */
     }
 
-    .hero-date img {
-        width: 350px;
-        margin-top: -110px;
-    }
+    
 
     /* 📱 Keep Buttons in One Line */
     .hero-buttons {
@@ -452,247 +482,104 @@ to {
         line-height: 1.7;
     }
 }
-
-/* 🔹 Large Screen Enhancements */
-@media (min-width: 1024px) {
-    .about-img {
-        width: 500px; /* Bigger image */
-        height: 350px;
-    }
-
-    .about-content h2 {
-        font-size: 40px; /* Larger heading */
-    }
-
-    .about-content p {
-        font-size: 20px;
-        line-height: 1.8;
-    }
-}
-
-/* Large Screens - Increase Image Size & Center Cards */
-@media (min-width: 1025px) {
-    .founders-top {
-        display: flex;
-        justify-content: center; /* Ensures cards stay in the center */
-        gap: 60px; /* Increase spacing between cards */
-    }
-
-    .founder-cardmain img {
-        width: 220px; /* Increased width */
-        height: 280px; /* Increased height */
-    }
-
-    .founder-cardmain {
-        max-width: 280px; /* Increase card size */
-        padding: 25px; /* Adjust padding */
-    }
-}
-
-/* 👑 Founders Section */
-.founders {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: white;
-}
-
-.founders-title {
+/* 🔹 Center the Founders & Committee Titles */
+.founders-title,
+.committee-title {
+    text-align: center; /* Center align text */
+    width: 100%; /* Ensure it spans the full width */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Align text properly */
+    color: #3a0404;
     font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: teal;
-    text-transform: none;
 }
-
-/* Layout container */
-.founders-container {
+/* Center the Founder Main Card */
+.founder-cardmain {
+    margin: 0 auto; /* Centers the card horizontally */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    align-items: center; /* Centers content inside */
+    justify-content: center;
+    text-align: center; /* Ensures text is also centered */
 }
 
-/* Founder container - Centered alignment */
-.founders-top,
-.founders-bottom {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Ensures proper centering */
-    gap: 40px; /* Space between cards */
-    width: 100%;
-    max-width: 1000px; /* Keeps it centered */
-    margin: 0 auto;
-}
-
-/* Founder card styling */
-.founder-cardmain {
-    background: #f8f9fa;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 250px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.founder-cardmain:hover {
-    transform: translateY(-5px);
-}
-
-/* Fixed size for all images */
+/* 🔹 Founder Main Card Image Styling */
 .founder-cardmain img {
-    width: 180px;  
-    height: 230px; 
-    object-fit: cover; 
-    border-radius: 10px;
+    width: 220px; /* Adjusted width */
+    height: 280px; /* Adjusted height */
+    object-fit: cover; /* Ensures image fits properly */
+    border-radius: 12px; /* Smooth rounded edges */
+    border: 3px solid #ddd; /* Light border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow effect */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* 🔽 Responsive Design 🔽 */
+/* 🔹 Hover Effect for Founder Main Card */
+.founder-cardmain img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Increased shadow */
+}
 
-/* Large Screens - Keep Centered */
+/* 🔹 Large Screens (1025px and above) - 5 Founder Cards per Row */
 @media (min-width: 1025px) {
-    .founders-top,
-    .founders-bottom {
-        justify-content: center; /* Keeps cards centered */
-    }
-}
-
-/* Medium Screens (Tablets) - Adjust Image Size */
-@media (max-width: 1024px) {
-    .founders-top,
     .founders-bottom {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 Cards per row */
-        gap: 20px;
+        grid-template-columns: repeat(5, 1fr); /* 5 Cards per row */
+        gap: 30px; /* Adjust spacing */
         justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
     }
-    .founder-cardmain img {
-        width: 160px;
-        height: 200px;
+
+    .founder-card {
+        max-width: 220px; /* Adjust width */
+        padding: 20px;
+    }
+
+    .founder-card img {
+        width: 150px; /* Image width */
+        height: 200px; /* Image height */
+        object-fit: cover;
+        border-radius: 10px;
     }
 }
 
-/* Small Screens (Mobile) - 2 Cards Per Row */
-@media (max-width: 768px) {
-    .founders-top,
+/* 🟡 Medium Screens (Tablets) - 3 Cards Per Row */
+@media (max-width: 1024px) {
     .founders-bottom {
-        grid-template-columns: repeat(2, 1fr); /* 2 Cards per row */
+        grid-template-columns: repeat(3, 1fr); /* 3 Cards per row */
+        gap: 20px;
     }
-    .founder-cardmain img {
+
+    .founder-card img {
         width: 140px;
         height: 180px;
     }
 }
 
-/* Extra Small Screens (Below 480px) - 1 Card Per Row */
-@media (max-width: 480px) {
-    .founders-top,
+/* 🔵 Small Screens (Mobile) - 2 Cards Per Row */
+@media (max-width: 768px) {
     .founders-bottom {
-        grid-template-columns: repeat(1, 1fr); /* 1 Card per row */
-    }
-    .founder-cardmain img {
-        width: 120px;
-        height: 160px;
-    }
-}
-
-/* Founder card styling */
-.founder-card {
-    background: #f8f9fa;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 250px; /* Default width */
-    transition: transform 0.3s ease-in-out;
-}
-
-.founder-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Fixed size for all images */
-.founder-card img {
-    width: 180px;  
-    height: 230px; 
-    object-fit: cover; 
-    border-radius: 10px;
-}
-
-/* Founders section layout (default: large screens) */
-.founders-top,
-.founders-bottom {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centers items */
-    gap: 40px;
-}
-
-/* Founder names */
-.founder h3 {
-    font-size: 20px;
-    margin-top: 10px;
-    font-weight: 600;
-}
-
-/* Organizing Committee Title */
-.committee-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin: 40px 0 20px;
-    color: #3a0404;
-    text-transform: none;
-    text-align: center;
-}
-
-/* 🌐 Responsive Design */
-
-/* Medium Screens (Tablets) - 3 Cards Per Row */
-@media only screen and (max-width: 1024px) {
-    .founders-top,
-    .founders-bottom {
-        grid-template-columns: repeat(3, 1fr); /* 3 Cards per row */
-        gap: 20px;
-    }
-
-    .founder-card {
-        max-width: 220px; /* Slightly smaller */
-    }
-
-    .founder-card img {
-        width: 160px;
-        height: 200px;
-    }
-}
-
-/* Small Screens (Mobile) - 2 Cards Per Row */
-@media only screen and (max-width: 768px) {
-    .founders-top,
-    .founders-bottom {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-columns: repeat(2, 1fr); /* 2 Cards per row */
         gap: 15px;
     }
 
     .founder-card {
-        max-width: 180px; /* Reduce card size */
+        max-width: 180px;
         padding: 15px;
     }
 
     .founder-card img {
-        width: 140px;
-        height: 180px;
-    }
-
-    .founder h3 {
-        font-size: 18px;
+        width: 130px;
+        height: 170px;
     }
 }
 
-/* Extra Small Screens (Below 480px) - 1 Card Per Row */
-@media only screen and (max-width: 480px) {
-    .founders-top,
+/* 🔴 Extra Small Screens (Below 480px) - 1 Card Per Row */
+@media (max-width: 480px) {
     .founders-bottom {
-        grid-template-columns: repeat(1, 1fr); /* 1 column */
+        grid-template-columns: repeat(1, 1fr); /* 1 Card per row */
         gap: 10px;
     }
 
@@ -705,11 +592,29 @@ to {
         width: 120px;
         height: 160px;
     }
-
-    .founder h3 {
-        font-size: 16px;
-    }
 }
+
+/* ✅ General Founder Card Styling */
+.founder-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.founder-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Founder Name Styling */
+.founder-card h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
 
 /* 📢 Mangalore Story (Single Card) */
 .mangalore-story {

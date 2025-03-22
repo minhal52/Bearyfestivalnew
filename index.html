@@ -49,85 +49,7 @@
 
     <!-- Title -->
     <title>Karnataka Beary Festival 2025 | Beary Festival in Mangalore – Culture, Food & More!</title>
-
-
-<style>
-
-/* 🌟 NAVBAR STYLES */
-.navbar {
-    display: flex;
-    justify-content: center; /* Centering nav links */
-    align-items: center;
-    padding: 15px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: transparent; /* Always transparent */
-}
-
-/* Add a slight opacity when scrolling */
-.navbar.scrolled {
-    background: rgba(0, 0, 0, 0.3); /* 30% opacity black */
-}
-
-
-/* Logo */
-.logo img {
-    height: 50px;
-    position: absolute;
-    left: 20px; /* Keeps logo aligned on the left */
-}
-
-/* Nav Links */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    padding: 0;
-}
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #f4d03f;
-}
-
-/* Remove hamburger menu */
-.hamburger {
-    display: none !important;
-}
-
-/* 📱 Mobile Responsive Navbar */
-@media (max-width: 768px) {
-    .navbar {
-        justify-content: center; /* Center the nav links */
-        padding: 10px;
-    }
-
-    .logo img {
-        height: 45px;
-        left: 10px; /* Adjusted for smaller screens */
-    }
-
-    .nav-links {
-        flex-direction: row; /* Keep nav links in a row */
-        gap: 20px; /* Adjust spacing */
-    }
-}
-
-</style>
+    <script src="assets/js/main.js"></script>
 </head>
 <body>
     
@@ -174,10 +96,10 @@
         <a href="#sponsor-cta" class="hero-btn sponsor-btn">Sponsor Now</a>
         <a href="#contact" class="hero-btn stall-btn">Book a Stall</a>
     </div>
-    <!--  Date Image Below Subtitle -->
+     <!-- Date Image Below Subtitle
     <div class="hero-date">
         <img src="assets/img/datepng-removebg-preview.png" alt="Event Date">
-    </div>
+    </div> -->
 
 </section>
 
@@ -235,7 +157,7 @@
 </section>
 <!--  FOUNDERS SECTION -->
 <section class="founders" id="about">
-  <h2 class="founders-title">Founders</h2>
+  <h2 class="founders-title">Founder</h2>
   <div class="founders-container">
       <!-- Top Founders (Now 2 founders in a row) -->
       <div class="founders-top">
@@ -246,16 +168,17 @@
               </div>
           </div>
 
-          <div class="foundermain">
+          <!-- <div class="foundermain">
               <div class="founder-cardmain">
                   <img src="assets/img/founder2.jpg" alt="Founder 2">
                   <h3>Mansooru Ahmed</h3>
               </div>
-          </div>
+          </div> -->
       </div>
 
+    
       <!-- Organizing Committee Heading -->
-      <h2 class="committee-title">Organizing Committee</h2>
+      <h2 class="committee-title">Co-Founders</h2>
 
       <!-- Bottom Founders (Remaining 2) -->
       <div class="founders-bottom">
@@ -265,6 +188,18 @@
               <h3>G A Bawa</h3>
           </div>
       </div>
+      <div class="founder">
+        <div class="founder-card">
+            <img src="assets/img/founder2.jpg" alt="Founder 4">
+            <h3>Mansooru Ahmed</h3>
+        </div>
+    </div>
+    <div class="founder">
+        <div class="founder-card">
+            <img src="assets/img/founder3.jpg" alt="Founder 3">
+            <h3>Dr Mansoor Kodi</h3>
+        </div>
+    </div>
       <div class="founder">
         <div class="founder-card">
             <img src="assets/img/founder4.jpg" alt="Founder 4">
@@ -277,27 +212,6 @@
             <h3>SM Musthafa</h3>
         </div>
     </div>
-          <div class="founder">
-              <div class="founder-card">
-                  <img src="assets/img/founder3.jpg" alt="Founder 3">
-                  <h3>Dr Mansoor Kodi</h3>
-              </div>
-          </div>
-
-          <div class="founder">
-            <div class="founder-card">
-                <img src="assets/img/shareef abbas.jpg" alt="Founder 4">
-                <h3>Shareef Abbas Valala</h3>
-            </div>
-        </div>
-          <div class="founder">
-            <div class="founder-card">
-                <img src="assets/img/aya kaikmba.jpg" alt="Founder 4">
-                <h3>Ayaz Kaikamba</h3>
-            </div>
-        </div>
-        
-      </div>
   </div>
 </section>
 
@@ -476,237 +390,43 @@
     </div>
 </footer>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+
+    
+// scrollwrapper
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollWrapper = document.querySelector(".scroll-wrapper");
     const scrollSection = document.querySelector(".scroll-section");
-    const duplicateContent = scrollSection.innerHTML; // Clone the content
 
-    // Duplicate the text to prevent empty space
-    scrollSection.innerHTML += duplicateContent;
-
-    // Apply animation dynamically
-    scrollSection.style.display = "flex";
-    scrollSection.style.animation = "scrollText 250s linear infinite";
+    // Duplicate the content to create an infinite loop
+    const duplicateSection = scrollSection.cloneNode(true);
+    scrollWrapper.appendChild(duplicateSection);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    ScrollReveal().reveal(".hero-logo img", {
-        origin: "top",
-        distance: "30px",
-        duration: 1000,
-        delay: 200,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
+    const scrollWrapper = document.querySelector(".scroll-wrapper");
+    const scrollSection = document.querySelector(".scroll-section");
 
-    ScrollReveal().reveal(".hero-title img", {
-        scale: 0.85,
-        duration: 1000,
-        delay: 400,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-    ScrollReveal().reveal(".hero-subtitle", {
-        origin: "bottom",
-        distance: "20px",
-        duration: 1000,
-        delay: 600,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-    ScrollReveal().reveal(".hero-date img", {
-        origin: "bottom",
-        distance: "20px",
-        duration: 1000,
-        delay: 800,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
+    // Duplicate the content to create an infinite loop
+    const duplicateSection = scrollSection.cloneNode(true);
+    scrollWrapper.appendChild(duplicateSection);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Title Animation
-    ScrollReveal().reveal(".guests-title", {
-        origin: "bottom",
-        distance: "30px",
-        duration: 1000,
-        delay: 200,
-        opacity: 0,
-        easing: "ease-in-out"
+
+    document.addEventListener("DOMContentLoaded", function () {
+    // Scroll to Sponsor section when clicking "Sponsor Now"
+    document.querySelector('.sponsor-btn').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.querySelector('#sponsor-cta').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Guest Cards Animation
-    ScrollReveal().reveal(".guest", {
-        origin: "bottom",
-        distance: "30px",
-        duration: 1000,
-        delay: 400,
-        opacity: 0,
-        easing: "ease-in-out",
-        interval: 300 // Stagger effect
-    });
-
-    // Guest Names Animation
-    ScrollReveal().reveal(".guest h3", {
-        origin: "bottom",
-        distance: "20px",
-        duration: 800,
-        delay: 500,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-    // Guest Description Animation
-    ScrollReveal().reveal(".guest p", {
-        origin: "bottom",
-        distance: "20px",
-        duration: 800,
-        delay: 500,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Image Animation (Slide from Left)
-    ScrollReveal().reveal(".about-img", {
-        origin: "left",
-        distance: "50px",
-        duration: 1000,
-        delay: 300,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-    // Text Content Animation (Slide from Right)
-    ScrollReveal().reveal(".about-content", {
-        origin: "left",
-        distance: "10px",
-        duration: 1000,
-        delay: 500,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Title Animation (Slide-up)
-    ScrollReveal().reveal(".founders-title", {
-        origin: "bottom",
-        distance: "30px",
-        duration: 1000,
-        delay: 200,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-    // Founder Cards Animation (Zoom-in One by One)
-    ScrollReveal().reveal(".founder", {
-        scale: 0.85,
-        duration: 1000,
-        delay: 300,
-        opacity: 0,
-        easing: "ease-in-out",
-        interval: 200 // Creates a slight delay for each founder
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Title Animation (Slide-up)
-    ScrollReveal().reveal(".team-title", {
-        origin: "bottom",
-        distance: "30px",
-        duration: 1000,
-        delay: 200,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-    // Team Card Animation (Zoom-in)
-    ScrollReveal().reveal(".team-card", {
-        scale: 0.85,
-        duration: 1000,
-        delay: 300,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Title & Description Animation (Slide-up)
-    ScrollReveal().reveal(".kbf-layout h2, .kbf-layout p", {
-        origin: "bottom",
-        distance: "30px",
-        duration: 1000,
-        delay: 200,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-    // Layout Image Animation (Zoom-in)
-    ScrollReveal().reveal(".layout-container img", {
-        scale: 0.85,
-        duration: 1000,
-        delay: 300,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-    // Sponsor CTA & Button Animation (Slide-up)
-    ScrollReveal().reveal(".sponsor-cta h2, .sponsor-cta p, .sponsor-btn", {
-        origin: "bottom",
-        distance: "30px",
-        duration: 1000,
-        delay: 300,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Title Animation (Slide-up)
-    ScrollReveal().reveal(".gallery-title", {
-        origin: "bottom",
-        distance: "30px",
-        duration: 1000,
-        delay: 200,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-
-    // Gallery Images Animation (Zoom-in with Staggered Effect)
-    ScrollReveal().reveal(".gallery-item", {
-        scale: 0.85,
-        duration: 800,
-        delay: 200,
-        opacity: 0,
-        easing: "ease-in-out",
-        interval: 150 // Stagger effect for each image
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Festival Description Animation
-    ScrollReveal().reveal(".festival-description", {
-        origin: "bottom",
-        distance: "30px",
-        duration: 1000,
-        delay: 300,
-        opacity: 0,
-        easing: "ease-in-out"
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Contact Section Animation
-    ScrollReveal().reveal(".contact-section", {
-        origin: "bottom",
-        distance: "30px",
-        duration: 1000,
-        delay: 300,
-        scale: 0.95,
-        opacity: 0,
-        easing: "ease-in-out"
+    // Scroll to Contact section when clicking "Book a Stall"
+    document.querySelector('.stall-btn').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
     });
 });
 
 </script>
-<script src="assets/js/main.js"></script>
 </body>
 </html>
