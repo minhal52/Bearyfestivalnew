@@ -984,9 +984,9 @@ color: black;
     font-weight: bold;
 }
 
-.footer a:hover {
+/* .footer a:hover {
     text-decoration: underline;
-}
+} */
 
 /* Location (Centered Below Columns) */
 .footer-location {
