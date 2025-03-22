@@ -936,26 +936,44 @@ color: black;
                 width: 70%;
             }
         }
-
-        /* Footer Styling */
+/* Footer Styling */
 .footer {
-    background: teal; /* Light background */
-    color: white; /* Dark text for contrast */
+    background: teal; /* Background color */
+    color: white; /* Text color */
     padding: 20px 0;
-    text-align: center;
     font-family: Arial, sans-serif;
+    text-align: center;
 }
 
+/* Footer container with 3 columns */
 .footer-container {
     max-width: 1200px;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+    gap: 20px;
+    text-align: left; /* Align text to left */
+    padding-bottom: 15px;
 }
 
-.footer-contact p, .footer-location p, .footer-text p {
+/* Each section inside the footer */
+.footer-contact,
+.footer-chat,
+.footer-mail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    gap: 5px;
+    padding: 0 20px;
+}
+
+.footer h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.footer p {
     margin: 5px 0;
     font-size: 16px;
 }
@@ -967,20 +985,114 @@ color: black;
 }
 
 .footer a:hover {
+    text-decoration: underline;
+}
+
+/* Location (Centered Below Columns) */
+.footer-location {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+/* Copyright & Designed by (Single Line) */
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: white;
+    font-weight: bold;
     text-decoration: none;
 }
 
-/* Font Awesome Icon Styling */
-.footer i {
-    color:white;
-    margin-right: 8px;
+.footer-bottom a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive for Mobile */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .footer-container {
+        display: flex;
+        flex-direction: column; /* Stack in one column */
+        align-items: center;
         text-align: center;
-        padding: 10px;
+        gap: 15px;
+    }
+
+    .footer-contact,
+    .footer-chat,
+    .footer-mail {
+        align-items: center; /* Center items for mobile */
+        text-align: center;
+        padding: 0;
+    }
+}
+/* Footer container with 3 columns */
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 20px;
+    text-align: left; /* Align text left */
+    padding-bottom: 15px;
+}
+
+/* Call Us & Mail Us aligned left, Chat Us centered */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+.footer-chat {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center Chat Us */
+    text-align: center;
+}
+
+.footer-mail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 20px;
+}
+
+/* Location (Centered Below Columns) */
+.footer-location {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+/* Copyright & Designed by (Single Line) */
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column; /* Stack in one column */
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-contact,
+    .footer-chat,
+    .footer-mail {
+        align-items: center; /* Center items for mobile */
+        text-align: center;
+        padding: 0;
     }
 }
 
