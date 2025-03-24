@@ -493,6 +493,7 @@ to {
     color: #3a0404;
     font-size: 32px;
 }
+
 /* Center the Founder Main Card */
 .founder-cardmain {
     margin: 0 auto; /* Centers the card horizontally */
@@ -520,80 +521,6 @@ to {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Increased shadow */
 }
 
-/* 🔹 Large Screens (1025px and above) - 5 Founder Cards per Row */
-@media (min-width: 1025px) {
-    .founders-bottom {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr); /* 5 Cards per row */
-        gap: 30px; /* Adjust spacing */
-        justify-content: center;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .founder-card {
-        max-width: 220px; /* Adjust width */
-        padding: 20px;
-    }
-
-    .founder-card img {
-        width: 150px; /* Image width */
-        height: 200px; /* Image height */
-        object-fit: cover;
-        border-radius: 10px;
-    }
-}
-
-/* 🟡 Medium Screens (Tablets) - 3 Cards Per Row */
-@media (max-width: 1024px) {
-    .founders-bottom {
-        grid-template-columns: repeat(3, 1fr); /* 3 Cards per row */
-        gap: 20px;
-    }
-
-    .founder-card img {
-        width: 140px;
-        height: 180px;
-    }
-}
-
-/* 🔵 Small Screens (Mobile) - 2 Cards Per Row */
-@media (max-width: 768px) {
-    .founders-bottom {
-        grid-template-columns: repeat(2, 1fr); /* 2 Cards per row */
-        gap: 15px;
-    }
-
-    .founder-card {
-        max-width: 180px;
-        padding: 15px;
-    }
-
-    .founder-card img {
-        width: 130px;
-        height: 170px;
-    }
-}
-
-/* 🔴 Extra Small Screens (Below 480px) - 1 Card Per Row */
-@media (max-width: 480px) {
-    .founders-bottom {
-        grid-template-columns: repeat(1, 1fr); /* 1 Card per row */
-        gap: 10px;
-    }
-
-    .founder-card {
-        max-width: 160px;
-        padding: 10px;
-    }
-
-    .founder-card img {
-        width: 120px;
-        height: 160px;
-    }
-}
-
 /* ✅ General Founder Card Styling */
 .founder-card {
     background: #f8f9fa;
@@ -613,6 +540,68 @@ to {
     font-size: 20px;
     margin-top: 10px;
     font-weight: 600;
+}
+
+/* 🔹 Large & Medium Screens (768px and above) - 3 Founder Cards per Row */
+@media (min-width: 768px) {
+    .founders-bottom {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 Cards per row */
+        gap: 30px; /* Adjust spacing */
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .founder-card {
+        max-width: 250px; /* Adjust width */
+        padding: 20px;
+    }
+
+    .founder-card img {
+        width: 150px; /* Image width */
+        height: 200px; /* Image height */
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+/* 🔵 Small Screens (Below 768px) - 2 Cards Per Row */
+@media (max-width: 767px) {
+    .founders-bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 Cards per row */
+        gap: 20px;
+    }
+
+    .founder-card {
+        max-width: 200px;
+        padding: 15px;
+    }
+
+    .founder-card img {
+        width: 130px;
+        height: 170px;
+    }
+}
+
+/* 🔴 Extra Small Screens (Below 480px) - 2 Cards Per Row */
+@media (max-width: 480px) {
+    .founders-bottom {
+        grid-template-columns: repeat(2, 1fr); /* 2 Cards per row */
+        gap: 10px;
+    }
+
+    .founder-card {
+        max-width: 180px;
+        padding: 10px;
+    }
+
+    .founder-card img {
+        width: 120px;
+        height: 160px;
+    }
 }
 
 
