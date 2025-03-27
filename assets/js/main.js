@@ -18,31 +18,31 @@ function toggleMenu() {
 });
 
   
-    // WHATSAPP MESSAGE
-    function sendWhatsAppMessage(event) {
-        event.preventDefault(); // Prevent form submission
-        
-        // Get input values
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let phone = document.getElementById("phone").value;
-        let category = document.getElementById("category").value;
-        let message = document.getElementById("message").value;
+   // WHATSAPP MESSAGE
+function sendWhatsAppMessage(event) {
+    event.preventDefault(); // Prevent form submission
 
-        // WhatsApp number (without + sign)
-        let whatsappNumber = "9632781673";
+    // Get input values
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let category = document.getElementById("category").value;
+    let message = document.getElementById("message").value;
 
+    // WhatsApp number (WITHOUT + sign)
+    let whatsappNumber = "917259628562";  // Remove the '+'
 
-        // Properly formatted prefilled WhatsApp message
-        let whatsappMessage = `Hello, I am ${name}. \nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\n\nMessage:\n${message}`;
+    // Prefilled WhatsApp message
+    let whatsappMessage = `Hello, I am ${name}.\nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\n\nMessage:\n${message}`;
 
-        // Encode the message for URL
-        let encodedMessage = encodeURIComponent(whatsappMessage);
+    // Encode the message for URL
+    let encodedMessage = encodeURIComponent(whatsappMessage);
 
-        // Open WhatsApp link
-        let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-        window.open(whatsappURL, "_blank");
-    }
+    // Open WhatsApp link
+    let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    window.open(whatsappURL, "_blank");
+}
+
 
 // sponsorform whatspp
 function openSponsorForm() {
