@@ -39,71 +39,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <!-- ScrollReveal for Animations -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
+    <script src="assets/js/main.js"></script>
     <!-- Title -->
     <title>Karnataka Beary Festival 2025 | Beary Festival in Mangalore – Culture, Food & More!</title>
-    <script src="assets/js/main.js"></script>
+
+
 </head>
 <body>
-    
-        <!--  NAVBAR SECTION -->
+    <header class="hero">
+        <!-- Navbar -->
         <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    
+            <!-- Background Video -->
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="assets/img/backgroundvdeo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         
-             <ul class="nav-links">
-                 <li><a href="#">Home</a></li>
-                 <li><a href="#about">About</a></li>
-                 <li><a href="#gallery">Gallery</a></li>
-                 <li><a href="#contact">Contact</a></li>
-             </ul>
-             <!--  Hamburger Menu -->
-             <div class="hamburger" onclick="toggleMenu()">
-                 <span></span>
-                 <span></span>
-                 <span></span>
-             </div>
-         </nav>
-  <!--  HERO SECTION -->
-<section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="assets/img/backgroundvdeo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!--  Logo -->
-    <div class="hero-logo">
-        <img src="assets/img/KBF_LOGO_1_-removebg-preview.png" alt="BearyMela Logo">
-    </div>
-
-    <!-- Title Image -->
-    <div class="hero-title">
-        <img src="assets/img/beary_festival[1].png" alt="BearyMela Title">
-    </div>
-
-    <!--  Subtitle Below Title -->
-    <div class="hero-subtitle">
-        By Mangalore Story
-    </div>
-
-    <!-- Buttons Section -->
-    <div class="hero-buttons">
-        <a href="#sponsor-cta" class="hero-btn sponsor-btn">Sponsor Now</a>
-        <a href="#contact" class="hero-btn stall-btn">Book a Stall</a>
-    </div>
-     <!-- Date Image Below Subtitle
-    <div class="hero-date">
-        <img src="assets/img/datepng-removebg-preview.png" alt="Event Date">
+            <!-- Overlay -->
+            <div class="hero-overlay"></div>
+        <!-- Hero Content -->
+<div class="hero-content">
+    <img src="assets/img/KBF_LOGO_1_-removebg-preview.png" alt="Logo" class="logo">
+    
+    <!-- Title Image Replacing Text Title and Subtitle -->
+    <img src="assets/img/KBFTITTLE.png" alt="Festival Title" class="title-image">
+     <!-- Date Image -->
+     <!-- <img src="datepng-removebg-preview.png" alt="Festival Date" class="date-image">-->
+    <!-- <div class="buttons">
+        <a href="#" class="btn">Sponsor Now</a>
+        <a href="#" class="btn btn-secondary">Book A Stall</a>
     </div> -->
+</div>
+   </header>    
 
-</section>
-
- 
+    
    <div class="news">
     <div class="scroll-wrapper">
         <div class="scroll-section">
@@ -115,255 +99,185 @@
         </div>
     </div>
 </div>
-<!--  GUESTS SECTION -->
-<!-- <section class="guests">
-    <h2 class="guests-title">Event Patrons</h2>
-    <div class="guests-container"> -->
-        <!-- Guest 1 -->
-        <!-- <div class="guest">
-            <img src="assets/img/24-removebg-preview.png" alt="Guest 1">
-            <h3>UT Khader</h3>
-            <p>Hon. speaker of the
-                karnataka legislative assembly</p>
-        </div> -->
-
-        <!-- Guest 2 -->
-        <!-- <div class="guest">
-            <img src="assets/img/8-removebg-preview.png" alt="Guest 2">
-            <h3> UT Ifthikar Ali</h3>
-            <p> chairman of state allied and
-                health care council</p>
-        </div>
-    </div>
-</section> -->
-
-<!-- about us -->
-<section class="about-us">
-    <div class="about-container">
-        <!-- Image Left, Content Right -->
-        <div class="about-section">
-            <img src="assets/img/g4.jpg" alt="Karnataka Beary Festival" class="about-img">
-            <div class="about-content">
-                <h2>About Karnataka Beary Festival 2025</h2>
-                <p>
-                    Karnataka Beary Festival 2025 is a vibrant three-day celebration of culture, talent, and community, 
-                    taking place at Karavali Utsava Maidana, Mangalore from April 18-20, 2025. 
-                    This festival showcases the richness of Karnataka’s Beary heritage through cultural activities, 
-                    achievers' recognition, a food festival, talent shows, and more.
-                </p>
-            </div>
-        </div>
+<section class="powered-by">
+    <p class="powered-text">Powered By</p>
+    <div class="powered-logos">
+        <img src="assets/img/presidency_logo-removebg-preview.png" alt="Sponsor 1">
+        <img src="assets/img/expertise_logo-removebg-preview.png" alt="Sponsor 2">
+        <img src="assets/img/almuzain_logo-removebg-preview.png" alt="Sponsor 3">
+        <img src="assets/img/oceanconstruction-removebg-preview.png" alt="Sponsor 4">
     </div>
 </section>
-<!--  FOUNDERS SECTION -->
-<section class="founders" id="about">
-  <h2 class="founders-title">Founder</h2>
-  <div class="founders-container">
-      <!-- Top Founders (Now 2 founders in a row) -->
-      <div class="founders-top">
-          <div class="foundermain">
-              <div class="founder-cardmain">
-                  <img src="assets/img/founder1.jpg" alt="Founder 1">
-                  <h3>Iqbal Parliya</h3>
-              </div>
-          </div>
+<section class="co-powered-by">
+    <p class="co-powered-text">Co-Powered By</p>
+    <div class="co-powered-logos">
+        <img src="assets/img/rohan corporation.png" alt="Co Sponsor 1">
+        <img src="assets/img/scdccbnk.png" alt="Co Sponsor 2">
+        <img src="assets/img/energia_logo-removebg-preview.png" alt="Co Sponsor 3">
+        <img src="assets/img/makhavi logo.jpeg" alt="Co Sponsor 4">
+        <img src="assets/img/Screenshot_2025-04-11_072132-removebg-preview.png" alt="Co Sponsor 5">
+        <img src="assets/img/exelon_logo-removebg-preview.png" alt="Co Sponsor 6">
+    </div>
+</section>
+<h2 class="event-heading">Event Highlights</h2>
 
-          <!-- <div class="foundermain">
-              <div class="founder-cardmain">
-                  <img src="assets/img/founder2.jpg" alt="Founder 2">
-                  <h3>Mansooru Ahmed</h3>
-              </div>
-          </div> -->
-      </div>
+<section class="event-section">
+  <!-- <div class="event-card">
+    <div class="event-dates">
+      <span>18</span><span>19</span><span>20</span>
+    </div>
+    <div class="event-month">APRIL 2025</div>
+    <div class="event-details" style="font-weight: bold; font-size: 1.5rem;">
+      <p>FOOD FESTIVAL</p>
+      <p>CULTURAL PROGRAM</p>
+      <p>AWARD PROGRAM</p>
+      <p>FELICITATION</p>
+    </div>
+  </div> -->
 
-    
-      <!-- Organizing Committee Heading -->
-      <h2 class="committee-title">Co-Founders</h2>
+  <div class="event-card">
+    <div class="event-dates"><span>19</span></div>
+    <div class="event-month">APRIL 2025</div>
+    <div class="highlight">MEGA JOB UTSAV</div>
+    <div class="event-details">
+      <p><strong>100+ COMPANIES</strong><br>INDIAN & ABROAD</p>
+      <p class="note">NOTE : BRING 10 COPIES OF CV</p>
+      <p>MEDICAL | ENGINEERING | COMMERCE | DIPLOMA | PUC | OTHERS</p>
+    </div>
+  </div>
 
-      <!-- Bottom Founders (Remaining 2) -->
-      <div class="founders-bottom">
-        <div class="founder">
-          <div class="founder-card">
-              <img src="assets/img/G.A Bawa.jpeg" alt="Founder 4">
-              <h3>G A Bawa</h3>
-          </div>
-      </div>
-      <div class="founder">
-        <div class="founder-card">
-            <img src="assets/img/founder2.jpg" alt="Founder 4">
-            <h3>Mansooru Ahmed</h3>
-        </div>
+  <div class="event-card">
+    <div class="event-dates"><span>20</span></div>
+    <div class="event-month">APRIL 2025</div>
+    <div class="highlight">EDUCATION MELA</div>
+    <div class="event-details">
+      <p><strong>100+ MENTORS</strong></p>
+      <p>WHAT NEXT? AFTER 10<sup>th</sup> & 12<sup>th</sup></p>
+      <p>COLLEGE & SCHOLARSHIP INFO</p>
+      <p>FELICITATION FOR 2<sup>nd</sup> PU TOPPERS<br>(85% MARKS ABOVE)</p>
     </div>
-    <div class="founder">
-        <div class="founder-card">
-            <img src="assets/img/founder3.jpg" alt="Founder 3">
-            <h3>Dr Mansoor Kodi</h3>
-        </div>
+  </div>
+
+  <div class="event-card">
+    <div class="event-dates"><span>19</span><span>20</span></div>
+    <div class="event-month">APRIL 2025</div>
+    <div class="event-details" style="font-size: 1.5rem;">
+      <p>BLOOD CAMP<br> HEALTH CAMP</p>
+      <img src="assets/img/bloodicon.png" alt="Blood Icon" class="blood-icon" style="height: 100px;" width="100px"/>
     </div>
-      <div class="founder">
-        <div class="founder-card">
-            <img src="assets/img/founder4.jpg" alt="Founder 4">
-            <h3>Hidayath Addoor</h3>
-        </div>
-    </div>
-    <div class="founder">
-        <div class="founder-card">
-            <img src="assets/img/sm mustafa.jpg" alt="Founder 4">
-            <h3>SM Musthafa</h3>
-        </div>
-    </div>
-    <div class="founder">
-        <div class="founder-card">
-            <img src="assets/img/aya kaikmba.jpg" alt="Founder 4">
-            <h3>Ayaz Kaikamba</h3>
-        </div>
-    </div>
+  </div>
+ 
+</section>
+<div class="venue-info">
+  <h3>Venue:</h3>
+  <p>KARAVALI UTSAV MAIDAN, LALBAGH – MANGALORE</p>
+</div>
+<!-- Mega Job Utsav Section -->
+<section class="event-row">
+  <div class="event-text">
+    <h2>MEGA JOB UTSAV</h2>
+    <p class="event-subheading">
+      Presidency Foundation, Department of Skill Development, Government of Karnataka, Karnataka Beary's Social and Cultural Forum jointly conducting Job Mela 2025 in Mangalore
+    </p>
+    <p class="event-description">
+      Companies from India and abroad, including reputed companies from Saudi Arabia, are participating in this one-day job mela. We encourage all registered individuals to join and assure them of continuous support until they secure a job, with a dedicated monitoring system to track their progress.
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeoiPuHW97cV_BSdgGCTt-mMIArvlpJvKMKZ6VjnZrVwCqtsw/viewform?usp=dialog" class="register-btn" target="_blank">Register for Job Utsav</a>
+
+  </div>
+  <div class="event-image">
+    <img src="assets/img/jobmela.jpeg" alt="Mega Job Utsav">
   </div>
 </section>
 
-
-<!--  Mangalore Story Section -->
-<section class="mangalore-story">
-    <h2 class="team-title">Marketing Team</h2>
-    <div class="team-card">
-        <img src="assets/img/manglorestoryprofile.jpeg" alt="Marketing Team">
-        <h3>Mangalore Story</h3>
-        <p>Mangalore Story is your go-to platform for everything buzzing in Mangalore! From events to trending stories, 
-            they bring you the latest updates and happenings in town.</p>
-    </div>
-</section>
-
-<div class="events-section">
-    <div class="events-title">Event Highlights</div>
-
-    <div class="event-container">
-        <img src="assets/img/evnt4.jpg" class="event-image" alt="Cultural Activities">
-        <div class="event-details">
-            <div class="event-title">Cultural Activities</div>
-            <div class="event-description">
-                 Immerse yourself in a vibrant celebration of art, music, and dance!  
-                 Experience captivating performances showcasing diverse traditions and heritage.  
-                 From soulful melodies to energetic dances, witness talent from all around.  
-                 A perfect blend of culture, creativity, and unforgettable moments awaits!
-            </div>
-        </div>
-    </div>
-
-    <div class="event-container">
-        <img src="assets/img/evnt1.jpg" class="event-image" alt="Achievers Recognition">
-        <div class="event-details">
-            <div class="event-title">Achievers Recognition</div>
-            <div class="event-description">
-                 Celebrating individuals who have made remarkable achievements in their fields.  
-                 Recognizing hard work, dedication, and excellence in various domains.  
-                 Inspiring success stories that motivate and empower future achievers.  
-                 Join us in honoring those who strive for greatness and set new benchmarks!
-            </div>
-        </div>
-    </div>
-
-    <div class="event-container">
-        <img src="assets/img/event3.jpg" class="event-image" alt="Food Festival">
-        <div class="event-details">
-            <div class="event-title">Food Festival</div>
-            <div class="event-description">
-                 Embark on a flavorful journey with mouth-watering dishes from across the globe.  
-                 Experience the richness of diverse cuisines, from traditional flavors to modern delights.  
-                 Savor delicious street food, gourmet meals, and sweet treats in one grand feast.  
-                 A paradise for food lovers—come taste, explore, and indulge in culinary excellence!  
-            </div>
-        </div>
-    </div>
-
-    <div class="event-container">
-        <img src="assets/img/talentshw.jpg" class="event-image" alt="Talent Show">
-        <div class="event-details">
-            <div class="event-title">Talent Show</div>
-            <div class="event-description">
-                 Step into the spotlight and showcase your incredible talents on stage!  
-                 From singing and dancing to comedy and magic, all skills are welcome.  
-                 Watch amazing performances that inspire, entertain, and leave you in awe.  
-                 A platform to shine, compete, and celebrate creativity like never before!  
-            </div>
-        </div>
-    </div>
-
-    <div class="event-container">
-        <img src="assets/img/g5.jpg" class="event-image" alt="Cricket Match">
-        <div class="event-details">
-            <div class="event-title">Cricket Match</div>
-            <div class="event-description">
-                 Get ready for an action-packed cricket match filled with thrill and excitement!  
-                 Watch teams battle it out with powerful shots, fast bowling, and stunning catches.  
-                 Cheer for your favorite players as they showcase skill, teamwork, and sportsmanship.  
-                 A day of intense competition and unforgettable moments—don’t miss the game!  
-            </div>
-        </div>
-    </div>
-
-    <div class="event-container">
-        <img src="assets/img/evnt2.jpg" class="event-image" alt="Kids Old Fun Games">
-        <div class="event-details">
-            <div class="event-title">Kids Old Fun Games</div>
-            <div class="event-description">
-                 Take a nostalgic trip back to the good old days with classic childhood games!  
-                 Watch kids enjoy sack races, tug-of-war, hopscotch, and many more fun activities.  
-                 A perfect blend of laughter, teamwork, and friendly competition for all ages.  
-                 Relive the joy of simple yet exciting games that bring families and friends together!  
-            </div>
-        </div>
-    </div>
-
-</div>
-<!--  KBF LAYOUT PLAN SECTION -->
-<section class="kbf-layout">
-    <h2>Karnataka Beary Festival Layout Plan</h2>
-    <p>Explore the Karnataka Beary Festival 2025 layout and discover the key areas, stages, and booths.</p>
-    
-    <!-- Layout Image -->
-    <div class="layout-container">
-        <img src="assets/img/KBFLAYOUT[1].jpg" alt="KBF Layout Plan">
-    </div>
-
-    <div class="sponsor-cta" id="sponsor-cta">
-        <h2>Are You Excited to Sponsor?</h2>
-        <p>Make an impact at the <strong>Karnataka Beary Festival 2025</strong>! Showcase your brand, connect with a vibrant audience, and be part of this grand celebration.</p>
-        
-        <button class="sponsor-btn" onclick="openSponsorForm()">Sponsorship Inquiry</button>
-    
-        <!-- Hidden Form -->
-        <div id="sponsor-form" class="sponsor-form">
-            <h3>Sponsorship Inquiry</h3>
-            <input type="text" id="sponsor-name" placeholder="Your Name" required>
-            <input type="tel" id="sponsor-phone" placeholder="Your Phone Number" required>
-            <input type="email" id="sponsor-email" placeholder="Your Email" required>
-            <textarea id="sponsor-message" placeholder="Enter your message..." required></textarea>
-            <button onclick="sendWhatsApp()">Send Inquiry on WhatsApp</button>
-            <button onclick="closeSponsorForm()" class="close-btn">Cancel</button>
-        </div>
-    </div>
-</section>
-
-<section class="program-gallery" id="gallery">
-    <h2 class="gallery-title">Program Gallery</h2>
-    <div class="gallery-container">
-        <div class="gallery-item"><img src="assets/img/g4.jpg" alt="Gallery Image 1"></div>
-        <div class="gallery-item"><img src="assets/img/g1.jpg" alt="Gallery Image 2"></div>
-        <div class="gallery-item"><img src="assets/img/g2.jpg" alt="Gallery Image 3"></div>
-        <div class="gallery-item"><img src="assets/img/g3.jpg" alt="Gallery Image 4"></div>
-        <div class="gallery-item"><img src="assets/img/g5.jpg" alt="Gallery Image 5"></div>
-        <div class="gallery-item"><img src="assets/img/g10.jpg" alt="Gallery Image 6"></div>
-        <div class="gallery-item"><img src="assets/img/g8.jpg" alt="Gallery Image 6"></div>
-        <div class="gallery-item"><img src="assets/img/g6.jpg" alt="Gallery Image 6"></div>
-        
-
-    </div>
-</section>
-<div class="festival-description">
-    <p>
-        Join us for the <strong>Karnataka Beary Festival 2025</strong>, a vibrant three-day celebration of culture, talent, and community, held at <strong>Karavali Utsava Maidana Ballalbagh, Mangalore</strong> from <strong>April 18-20, 2025</strong>. This extravaganza promises an unforgettable experience, showcasing the best of Karnataka's Beary culture through cultural activities, achievers' recognition, food festival, talent show, job mela, kids' fun games, startup platform, cricket match, and family gathering. The festival will also feature competitions, including food and mehandi, and awards for outstanding contributions in various fields. Mark your calendars and get ready to experience the vibrant spirit of Karnataka's Beary community!
+<!-- Education Mela Section -->
+<section class="event-row reverse">
+ 
+  <div class="event-text">
+    <h2>EDUCATION MELA</h2>
+    <p class="event-subheading">
+      Empowering Students with Knowledge for a Better Future
     </p>
+    <p class="event-description">
+      We're organizing Edu Mela, a comprehensive career guidance program designed to empower students with the knowledge and tools needed to make informed decisions about their future. We aim to bridge the gap between education and employability by offering expert insights and career opportunities.
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6Grbsn0FSQ6ciq_sXfkIuYDhxfgivho62QedZSsncmygTZg/viewform?usp=dialog" class="register-btn" target="_blank">Register for Education Mela</a>
+  </div>
+  <div class="event-image">
+      <img src="assets/img/edu mela.jpeg" alt="Education Mela">
+    </div>
+  </section>
+<!-- 🔹 ABOUT SECTION -->
+<section class="about">
+    <div class="about-container">
+        <!-- Left Side - Image -->
+        <div class="about-image">
+            <img src="assets/img/g8.jpg" alt="About Image">
+        </div>
+        
+        <!-- Right Side - Content -->
+        <div class="about-content">
+            <h2 class="about-title">About Our Event</h2>
+            <p class="about-text">
+                Karnataka Beary's Festival is a three-day extravaganza that
+                showcases the state's rich coastal cultural heritage through
+                diverse programs and concepts. The festival features a wide
+                range of stalls, including food, handicrafts, and cultural
+                exhibitions, offering a unique shopping and dining
+                experience.
+            </p>
+            <a href="about.html" class="btn read-more">Read More</a>
+        </div>
+    </div>
+</section>
+
+  </section>
+
+<!-- 🔹 KBF LAYOUT PLAN -->
+<section class="kbf-layout">
+  <h2 class="layout-title">KBF Layout Plan</h2>
+  <div class="layout-container">
+      <img src="assets/img/KBFLAYOUT.jpg" alt="KBF Layout Plan">
+  </div>
+  <a href="assets/img/KBFLAYOUT.jpg" download class="btn download-btn">Download Plan</a>
+</section>
+<section class="gallery-section">
+    <h2 class="gallery-heading">Gallery</h2>
+    <div class="gallery">
+        <!-- <img src="assets/img/f1.jpg" alt="Gallery Image 6">
+        <img src="assets/img/f2.jpg" alt="Gallery Image 1">
+        <img src="assets/img/f3.jpg" alt="Gallery Image 3"> -->
+        <!-- <img src="assets/img/f4.jpg" alt="Gallery Image 4">
+        <img src="assets/img/f5.jpg" alt="Gallery Image 5"> -->
+        <!-- <img src="assets/img/f7.jpg" alt="Gallery Image 6" onclick="openLightbox(this)"> -->
+        <img src="assets/img/f9.jpg" alt="Gallery Image 8" onclick="openLightbox(this)">
+        <img src="assets/img/f10.jpg" alt="Gallery Image 9" onclick="openLightbox(this)">
+        <img src="assets/img/f8.jpg" alt="Gallery Image 7" onclick="openLightbox(this)">
+      
+      
+        <img src="assets/img/event3.jpg" alt="Gallery Image 10" onclick="openLightbox(this)">
+        <img src="assets/img/evnt1.jpg" alt="Gallery Image 11" onclick="openLightbox(this)">
+        <img src="assets/img/evnt2.jpg" alt="Gallery Image 12" onclick="openLightbox(this)">
+        <img src="assets/img/n8.jpg" alt="Gallery Image 9" onclick="openLightbox(this)">
+        <!-- <img src="assets/img/evnt4.jpg" alt="Gallery Image 1"> -->
+        <img src="assets/img/g1.jpg" alt="Gallery Image 8" onclick="openLightbox(this)">
+        <!-- <img src="assets/img/g2.jpg" alt="Gallery Image 8" onclick="openLightbox(this)"> -->
+        <img src="assets/img/g3.jpg" alt="Gallery Image 8" onclick="openLightbox(this)">
+        <!-- <img src="assets/img/g4.jpg" alt="Gallery Image 8" onclick="openLightbox(this)">/ -->
+        <img src="assets/img/g5.jpg" alt="Gallery Image 8" onclick="openLightbox(this)">
+        <!-- <img src="assets/img/g6.jpg" alt="Gallery Image 8" onclick="openLightbox(this)"> -->
+        <!-- <img src="assets/img/g7.jpg" alt="Gallery Image 8" onclick="openLightbox(this)"> -->
+        <!-- <img src="assets/img/g8.jpg" alt="Gallery Image 8" onclick="openLightbox(this)"> -->
+  
+    </div>
+    <!-- Explore More Button -->
+<div class="explore-more-container">
+  <a href="gallery.html" class="explore-more-btn">Explore More</a>
 </div>
+
+</section>
+
+<!-- contact form  -->
 <div class="contact-section" id="contact">
     <h2 style="text-align: center;">Connect Us</h2>
     <form class="contact-form" onsubmit="sendWhatsAppMessage(event)">
@@ -379,7 +293,6 @@
         <button type="submit">Inquire</button>
     </form>
 </div>
-
 <!-- Footer Section -->
 <footer class="footer">
     <div class="footer-container">
@@ -425,9 +338,19 @@
     </div>
 </footer>
 
-
 <script>
+   
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollSection = document.querySelector(".scroll-section");
+    const duplicateContent = scrollSection.innerHTML; // Clone the content
 
+    // Duplicate the text to prevent empty space
+    scrollSection.innerHTML += duplicateContent;
+
+    // Apply animation dynamically
+    scrollSection.style.display = "flex";
+    scrollSection.style.animation = "scrollText 250s linear infinite";
+});
     
 // scrollwrapper
 
@@ -463,6 +386,32 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
     });
 });
+   // WHATSAPP MESSAGE
+   function sendWhatsAppMessage(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Get input values
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let category = document.getElementById("category").value;
+        let message = document.getElementById("message").value;
+
+        // WhatsApp number (without + sign)
+        let whatsappNumber = "9632781673";
+
+
+        // Properly formatted prefilled WhatsApp message
+        let whatsappMessage = `Hello, I am ${name}. \nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\n\nMessage:\n${message}`;
+
+        // Encode the message for URL
+        let encodedMessage = encodeURIComponent(whatsappMessage);
+
+        // Open WhatsApp link
+        let whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        window.open(whatsappURL, "_blank");
+    }
+
 
 </script>
 </body>

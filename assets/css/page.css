@@ -1,0 +1,697 @@
+   /* 🔹 General Reset */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: #f5f5f5;
+    padding-top: 70px; /* To prevent content from hiding behind fixed navbar */
+  }
+  
+  /* 🔹 Navbar Styling */
+  .navbar {
+    width: 100%;
+    height: 70px;
+    background:teal;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ffcc00;
+  }
+  
+  /* 🔹 Toggle Button */
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    z-index: 1100;
+  }
+  
+  /* 🔹 Mobile Navbar */
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .navbar {
+      width: 100%;
+      height: 60px;
+      background:teal;
+    }
+  
+    .nav-links {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background: #333;
+      flex-direction: column;
+      text-align: center;
+      display: none;
+      padding: 20px 0;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      margin-right: 20px;
+    }
+  }
+  
+  /* 🔹 Team Section */
+  .team-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px;
+  }
+  
+  .team-image {
+    width: 50%;
+    max-width: 400px;
+  }
+  
+  .team-image img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .team-content {
+    width: 50%;
+  }
+  
+  .team-content h2 {
+    font-size: 28px;
+    color: #3a0404;
+    margin-bottom: 10px;
+  }
+  
+  .team-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .team-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .team-image, .team-content {
+      width: 100%;
+    }
+  
+    .marketing-team {
+      flex-direction: column;
+    }
+  
+    .tech-team {
+      flex-direction: column-reverse;
+    }
+  }
+  
+  /* 🔹 About Section */
+  .about-festival {
+    padding: 40px 20px;
+  }
+  
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .about-text {
+    flex: 1 1 500px;
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
+    color: #3a0404;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  
+  .about-text h2 span {
+    color:#3a0404;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .festival-link {
+    font-weight: bold;
+    color: #006666;
+    margin-top: 20px;
+  }
+  
+  .about-image {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .about-container {
+      flex-direction: column;
+    }
+  
+    .about-image {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .about-image img {
+      max-width: auto;
+    }
+  }
+  
+  /* 🔹 Why Festival Section */
+  .why-festival {
+    padding: 40px 20px;
+  }
+  
+  .why-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    align-items: flex-start;
+  }
+  
+  .why-image {
+    flex: 1 1 400px;
+  }
+  
+  .why-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .why-text {
+    flex: 1 1 500px;
+  }
+  
+  .why-text h2 {
+    font-size: 2rem;
+    color:#3a0404;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  
+  .why-text h2 span {
+    color: #3a0404;
+  }
+  
+  .why-text p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .why-text ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    color: #444;
+  }
+  
+  .why-text ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .festival-link {
+    font-weight: bold;
+    color: #006666;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .why-container {
+      flex-direction: column;
+    }
+  }
+  
+  /* 🔹 Key Highlights Section */
+  .key-highlights-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    border-radius: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  
+  .key-highlights-text {
+    width: 55%;
+  }
+  
+  .key-highlights-text h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #3a0404;
+    margin-bottom: 15px;
+  }
+  
+  .key-highlights-text ul {
+    padding-left: 20px;
+  }
+  
+  .key-highlights-text ul li {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  
+  .key-highlights-text ul li strong {
+    color: #222;
+  }
+  
+  .key-highlights-image {
+    width: 40%;
+    text-align: center;
+  }
+  
+  .key-highlights-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .key-highlights-section {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .key-highlights-text,
+    .key-highlights-image {
+      width: 100%;
+    }
+  
+    .key-highlights-image {
+      margin-top: 20px;
+    }
+  
+    .key-highlights-image img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  
+    .key-highlights-text h2 {
+      font-size: 22px;
+      text-align: center;
+    }
+  
+    .key-highlights-text ul {
+      padding-left: 15px;
+    }
+  }
+
+  /* contact page */
+        
+
+.contact-section {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: teal;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #040823;
+    margin-top: 100px;
+}
+
+.contact-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 auto;
+    display: block;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #3a0404;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.contact-form button:hover {
+    background: #d1a347;
+}
+
+/* gallery */
+
+
+/* 🔹 Gallery Section */
+.gallery-section {
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.gallery-heading {
+    font-size: 2rem;
+    color: #3a0404;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Responsive Grid Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 images per row for large screens */
+    gap: 10px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 15px;
+}
+.explore-more-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.explore-more-btn {
+    display: inline-block;
+    background-color:#3a0404;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.explore-more-btn:hover {
+    background-color: white;
+    color: #3a0404;
+    border: 2px solid #3a0404;
+}
+
+
+/* 🔹 Gallery Images */
+.gallery img {
+    width: 100%;
+    height: 320px; /* Default height for large screens */
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* 🔹 Medium Screens (3 images per row) */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .gallery img {
+        height: 250px;
+    }
+}
+
+/* 🔹 Mobile Screens (2 images per row) */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery img {
+        height: 220px;
+    }
+}
+
+/* 🔹 Extra Small Screens */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery img {
+        height: 200px;
+    }
+}
+/* Footer Styling */
+.footer {
+  background: teal; /* Background color */
+  color: white; /* Text color */
+  padding: 20px 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  }
+  
+  /* Footer container with 3 columns */
+  .footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+  gap: 20px;
+  text-align: left; /* Align text to left */
+  padding-bottom: 15px;
+  }
+  
+  /* Each section inside the footer */
+  .footer-contact,
+  .footer-chat,
+  .footer-mail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to the left */
+  gap: 5px;
+  padding: 0 20px;
+  }
+  
+  .footer h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: white;
+  }
+  
+  .footer p {
+  margin: 5px 0;
+  font-size: 16px;
+  }
+  
+  .footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  }
+  
+  /* .footer a:hover {
+  text-decoration: underline;
+  } */
+  
+  /* Location (Centered Below Columns) */
+  .footer-location {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 16px;
+  }
+  
+  /* Copyright & Designed by (Single Line) */
+  .footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+  }
+  
+  .footer-bottom a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  }
+  
+  .footer-bottom a:hover {
+  text-decoration: underline;
+  }
+  
+  /* Responsive for Mobile */
+  @media (max-width: 768px) {
+  .footer-container {
+  display: flex;
+  flex-direction: column; /* Stack in one column */
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  }
+  
+  .footer-contact,
+  .footer-chat,
+  .footer-mail {
+  align-items: center; /* Center items for mobile */
+  text-align: center;
+  padding: 0;
+  }
+  }
+  /* Footer container with 3 columns */
+  .footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px;
+  text-align: left; /* Align text left */
+  padding-bottom: 15px;
+  }
+  
+  /* Call Us & Mail Us aligned left, Chat Us centered */
+  .footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  }
+  
+  .footer-chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center Chat Us */
+  text-align: center;
+  }
+  
+  .footer-mail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+  }
+  
+  /* Location (Centered Below Columns) */
+  .footer-location {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 16px;
+  }
+  
+  /* Copyright & Designed by (Single Line) */
+  .footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
+  }
+  
+  /* Responsive for Mobile */
+  @media (max-width: 768px) {
+  .footer-container {
+  display: flex;
+  flex-direction: column; /* Stack in one column */
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  }
+  
+  .footer-contact,
+  .footer-chat,
+  .footer-mail {
+  align-items: center; /* Center items for mobile */
+  text-align: center;
+  padding: 0;
+  }
+  }
+  
