@@ -407,7 +407,7 @@ body {
       width: 40px;
     }
   }
-  /* Event Highlights Heading */
+ /* Event Highlights Heading */
 .event-heading {
     font-size: 2.2rem;
     font-weight: bold;
@@ -445,6 +445,43 @@ body {
     margin: 0;
     font-weight: bold;
   }
+  /* .qr-code {
+    margin: 20px 0;
+    text-align: left;
+  } */
+  
+  .qr-code p {
+    margin-top: 10px;
+    font-weight: 500;
+    color: white;
+  }
+  .qr-code img{
+    width: auto;
+    height: auto;
+  }
+  
+  @media (max-width: 600px) {
+    .qr-code {
+      text-align: center;
+    }
+  
+    .qr-code img {
+      max-width: 120px;
+    }
+  
+    .qr-code p {
+      font-size: 14px;
+      margin-top: 8px;
+    }
+  }
+  
+  /* Increase QR image size for large screens */
+  @media (min-width: 1024px) {
+    .qr-code img {
+      max-width: 180px;
+    }
+  }
+  
   
   /* Event Row Section */
   .event-row {
@@ -587,7 +624,27 @@ body {
     }
   }
   
-    
+    /* Mobile Screens */
+@media (max-width: 768px) {
+    .event-row,
+    .event-row.reverse {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    /* Move the image above the content */
+    .event-image {
+      order: -1; /* Ensures the image comes first */
+      margin-top: 20px;
+    }
+  
+    /* Adjust the button and text styling for mobile if needed */
+    .register-btn {
+      padding: 10px 20px;
+      font-size: 0.95rem;
+    }
+  }
+  
 /* Event Patron (Top Left) */
 /* .event-patron {
     position: absolute;
@@ -1296,3 +1353,69 @@ text-align: center;
 padding: 0;
 }
 }
+
+
+
+/* ads section */
+
+.sponsors-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .sponsors-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #3a0404;
+  }
+
+  .sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .sponsor-logos img {
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .sponsor-logos img:hover {
+    transform: scale(1.05);
+  }
+
+  .sponsor-video video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    border: 2px solid #ccc;
+  }
+
+  @media (max-width: 600px) {
+    .sponsor-logos {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sponsor-logos img {
+      max-width: 120px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .sponsor-logos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 20px;
+    }
+  
+    .sponsor-logos img {
+      max-width: 100%;
+      margin: auto;
+    }
+  }
+  
